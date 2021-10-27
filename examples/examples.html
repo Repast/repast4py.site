@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title></title>
+<title>Repast4Py Examples</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,108 +437,179 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1><span class="image"><img src="./images/Repast4PyLogo_avenir_light_300h.png" alt="Repast4PyLogo avenir light 300h" width="400"></span></h1>
+<h1>Repast4Py Examples</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_getting_started">Getting Started</a></li>
+<li><a href="#_example_models">Example Models</a>
+<ul class="sectlevel2">
+<li><a href="#_random_walk">Random Walk</a></li>
+<li><a href="#_rumor_spreading">Rumor Spreading</a></li>
+<li><a href="#_zombies">Zombies</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_repast4py">Repast4Py</h2>
+<h2 id="_getting_started">Getting Started</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Repast for Python (Repast4Py) is the newest member of the <a href="https://repast.github.io">Repast Suite</a> of free and open source agent-based modeling and simulation software.
-It builds on <a href="https://repast.github.io/repast_hpc.html">Repast HPC</a>, and provides the ability to build large, distributed agent-based models (ABMs) that span multiple processing cores.
-Distributed ABMs enable the development of complex systems models that capture the scale and relevant details of many problems of societal importance. Where Repast HPC is implemented in C++ and is more HPC expert focused, Repast4Py is a Python package and is designed to provide an easier on-ramp for researchers from diverse scientific communities to apply large-scale distributed ABM methods.
-Repast4Py is released under the BSD-3 open source license, and leverages <a href="https://numba.pydata.org">Numba</a>, <a href="https://numpy.org">NumPy</a>, and <a href="https://pytorch.org">PyTorch</a> packages, and the Python C API
-to create a scalable modeling system that can exploit the largest HPC resources and emerging computing architectures. See our paper on Repast4Py for additional information about the design and implementation.&#8288;<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
-</div>
-<div class="sect2">
-<h3 id="_requirements">Requirements</h3>
-<div class="paragraph">
-<p>Repast4Py requires Python 3.7+</p>
+<p>The example models can be downloaded from
+<a href="https://jozik.github.io/goes_bing/examples/repast4py_example_models.zip">here</a>.</p>
 </div>
 <div class="paragraph">
-<p>Repast4Py can run on Linux, macOS and Windows provided there is a working MPI implementation
-installed and mpi4py is supported. Repast4Py is developed and tested on Linux. We recommend
-that Windows users use the Windows Subsystem for Linux (WSL). Installation instructions for
-WSL can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/install">here</a>.</p>
+<p>Each
+example model resides in its own subdirectory, e.g., <code>examples/rumor</code> for the
+Rumor Network model. Each subdirectory contains the python source for the model,
+an html file with additional information about the model, and a yaml format
+file containing the input parameters for that model.</p>
 </div>
 <div class="paragraph">
-<p>Under Linux, MPI can be installed using your OS&#8217;s package manager. For example,
-under Ubuntu 20.04 (and thus WSL), the mpich MPI implementation can be installed with:</p>
+<p>To run the model,</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ sudo apt install mpich</code></pre>
+<pre class="pygments highlight"><code data-lang="bash"><span></span>$ <span class="tok-nb">cd</span> examples/&lt;model_dir&gt;
+$ mpirun -n <span class="tok-m">4</span> python &lt;model.py&gt; &lt;input_params.yaml&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>A typical campus cluster, or HPC resource will have MPI and mpi4py installed.
-Check the resource&#8217;s documentation on available software for more details.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_installation">Installation</h3>
-<div class="paragraph">
-<p>Repast4Py can be downloaded and installed from PyPI using pip.
-Since Repast4Py includes native MPI C&#43;&#43; code that needs to be compiled,
-the C compiler <code>CC</code> environment variable must be set
-to the <code>mpicxx</code> (or <code>mpic++</code>) compiler wrapper provided by your MPI installation.</p>
+<p>Replace <code>&lt;model_dir&gt;</code>,<code>&lt;model.py&gt;</code>, <code>&lt;input_params.yaml&gt;</code> with the relevant model directory,
+python file, and yaml input file. For example,</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>env CC=mpicxx pip install repast4py</pre>
+<pre class="pygments highlight"><code data-lang="bash"><span></span>$ <span class="tok-nb">cd</span> examples/rndwalk
+$ mpirun -n <span class="tok-m">4</span> python rndwalk.py random_walk.yaml</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_models">Example Models</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_random_walk">Random Walk</h3>
+<div class="paragraph">
+<p><strong>Location</strong>: <code>examples/rndwalk</code><br>
+<strong>Key Concepts</strong>: movement, grid API</p>
+</div>
+<div class="paragraph">
+<p>The Random Walk model is simple model intended as introduction to coding a Repast4Py simulation.
+The model consists of a number of agents moving at random around a two-dimensional grid and logging
+the aggregate and agent-level colocation counts. Each iteration of the model:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All the agents (<em>walkers</em>) choose a random direction and move one unit in that direction.</p>
+</li>
+<li>
+<p>All the agents count the number of other agents they <em>meet</em> at their current location by
+determining the number of colocated agents at their grid locations.</p>
+</li>
+<li>
+<p>The sum, minimum, and maxiumum number of agents met are calculated across all process ranks, and these
+values are logged as the total, minimum, and maximum <code>meet</code> values.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="https://jozik.github.io/goes_bing/guide/user_guide.html#_tutorial_1_a_simple_random_walk_model">Tutorial 1</a> in the Repast4Py
+User&#8217;s Guide for a complete explanation of the Random Walk model.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_documentation">Documentation</h3>
-<div class="ulist">
-<ul>
+<h3 id="_rumor_spreading">Rumor Spreading</h3>
+<div class="paragraph">
+<p><strong>Location</strong>: <code>examples/rumor</code><br>
+<strong>Key Concepts</strong>: networks, network neighbors, network API</p>
+</div>
+<div class="paragraph">
+<p>The Rumor model is a simple network model that illustrates repast4py&#8217;s network
+agent-based model features. The simulation models the spread of a rumor through a networked population.
+During initialization some number of agents (network nodes) are marked as rumor spreaders. Then at each iteration of the model:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><a href="./guide/user_guide.html">User&#8217;s Guide</a></p>
+<p>A random draw is made to determine if the network neighbors of any rumor-spreading nodes have received the rumor.
+This draw is performed once for each neighbor.</p>
 </li>
 <li>
-<p><a href="./apidoc/index.html">API Docs</a></p>
+<p>After all of the neighbors that can receive the rumor have been processed,
+the collection of rumor spreaders is updated to include those nodes that received the rumor.</p>
 </li>
 <li>
-<p><a href="./examples/examples.html">Example Models</a></p>
+<p>The total number of rumor spreaders and the number of new rumor spreaders are logged.</p>
 </li>
-</ul>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="https://jozik.github.io/goes_bing/guide/user_guide.html#_tutorial_2_the_rumor_network_model">Tutorial 2</a> in the Repast4Py User&#8217;s Guide for a complete explanation of the Rumor model.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_contact_and_support">Contact and Support</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/Repast/repast4py/issues">GitHub Issues</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Repast/repast4py">GitHub Repository</a></p>
-</li>
-</ul>
+<h3 id="_zombies">Zombies</h3>
+<div class="paragraph">
+<p><strong>Location</strong>: <code>examples/zombies</code><br>
+<strong>Key Concepts</strong>: movement, neighborhood search, continuous space API, grid API</p>
 </div>
 <div class="paragraph">
-<p>In addition to filing issues on GitHub, support is also available via
-<a href="https://stackoverflow.com/questions/tagged/repast4py">Stack Overflow</a>.
-Please use the <code>repast4py</code> tag to ensure that we are notified of your question.
-Software announcements will be made on the
-<a href="http://lists.sourceforge.net/lists/listinfo/repast-interest">repast-interest</a> mailing list.</p>
+<p>The Zombies model is a predator-prey type model that illustrates the use of a
+continous space for movement and a discrete grid for neighborhood searches.
+In the Zombies model, human agents are pursued by zombie agents, and once caught become
+zombies themselves. Each timestep, the following occurs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All the Zombies:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Query their immediate neighborhood to determine the adjacent grid location with
+the most number of Humans</p>
+</li>
+<li>
+<p>Move towards that location, assuming any Humans are found</p>
+</li>
+<li>
+<p>Infect the Humans at that location, also assuming any Humans are found</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>All the Humans:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Become a Zombie, after being infected for more than 9 timesteps, else</p>
+</li>
+<li>
+<p>Query their immediate neighborhood to determine the adjacent grid location with
+the fewest number of Zombies</p>
+</li>
+<li>
+<p>Move to that location at twice the speed of a Zombie.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Jonathan Ozik is the Repast project lead. Please contact him through
-the <a href="https://www.anl.gov/staff-directory">Argonne Staff Directory</a> if you
-have project-related questions.</p>
+<p>See <a href="https://jozik.github.io/goes_bing/guide/user_guide.html#_tutorial_3_the_zombies_model">Tutorial 3</a> in the Repast4Py User&#8217;s Guide
+for a complete explanation of the Zombies model.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. Collier, N. T., Ozik, J., &amp; Tatara, E. R. (2020). Experiences in Developing a Distributed Agent-based Modeling Toolkit with Python. 2020 IEEE/ACM 9th Workshop on Python for High-Performance and Scientific Computing (PyHPC), 1–12. <a href="https://doi.org/10.1109/PyHPC51966.2020.00006" class="bare">https://doi.org/10.1109/PyHPC51966.2020.00006</a>
 </div>
 </div>
 <div id="footer">

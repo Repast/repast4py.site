@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repast4py.core module &#8212; repast4py  documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="repast4py.geometry module" href="repast4py.geometry.html" />
+    <link rel="prev" title="repast4py.context module" href="repast4py.context.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.geometry.html" title="repast4py.geometry module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.context.html" title="repast4py.context module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" accesskey="U">repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.core module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-repast4py.core">
+<span id="repast4py-core-module"></span><h1>repast4py.core module<a class="headerlink" href="#module-repast4py.core" title="Permalink to this headline">¶</a></h1>
+<p>This module implements core functionality used by both contexts
+and projections.</p>
+<dl class="py class">
+<dt id="repast4py.core.Agent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">Agent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.Agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parent class of all agents in a repast4py simulation.</p>
+<p>Each agent must have an id that is unique among all agents over all the ranks of a simulation. This id is composed of an integer id, an agent type id, and the integer rank on which the agent is created. These components are the arguments to the Agent constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – an integer that uniquely identifies this agent from among those of the same type and created on the same rank. Consequently, agents created on different ranks, or of different types but created on the same rank may have the same id.</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – an integer that specifies the type of this agent.</p></li>
+<li><p><strong>rank</strong> (<em>int</em>) – the rank on which this agent is created.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="repast4py.core.Agent.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#repast4py.core.Agent.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the id component from this agent’s unique id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.Agent.local_rank">
+<code class="sig-name descname">local_rank</code><a class="headerlink" href="#repast4py.core.Agent.local_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets and sets the current local rank of this agent. Users should <strong>NOT</strong> need to access this value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.Agent.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#repast4py.core.Agent.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the type component from this agent’s unique id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.Agent.uid">
+<code class="sig-name descname">uid</code><a class="headerlink" href="#repast4py.core.Agent.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets this agent’s unique id tuple (id, type, rank)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Tuple(int, int, int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.Agent.uid_rank">
+<code class="sig-name descname">uid_rank</code><a class="headerlink" href="#repast4py.core.Agent.uid_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the rank component from this agent’s unique id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.core.AgentManager">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">AgentManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rank</span></em>, <em class="sig-param"><span class="n">world_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manages local and non-local (ghost) agents as they move
+between processes.</p>
+<p><strong>This is class is internal to the repast4py implementation and is NOT for users.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rank</strong> (<em>int</em>) – the local process rank</p></li>
+<li><p><strong>world_size</strong> (<em>int</em>) – the total number of ranks in the model</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.add_ghost">
+<code class="sig-name descname">add_ghost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ghosted_rank</span></em>, <em class="sig-param"><span class="n">agent</span></em>, <em class="sig-param"><span class="n">incr</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.add_ghost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the specified agent to the ghost collection from
+the specified rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ghosted_rank</strong> (<em>int</em>) – the rank the agent was received from</p></li>
+<li><p><strong>agent</strong> (<em>_core.Agent</em>) – the agent to add</p></li>
+<li><p><strong>incr</strong> (<em>int</em>) – the amount to increment the reference count</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.add_ghosts_to_projection">
+<code class="sig-name descname">add_ghosts_to_projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">projection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.add_ghosts_to_projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds all the ghost agents to the specified projection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>projection</strong> – The projection to add the ghosts to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.add_local">
+<code class="sig-name descname">add_local</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.add_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the specified agent as a local agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent</strong> (<em>_core.Agent</em>) – the agent to add</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.add_req_ghost">
+<code class="sig-name descname">add_req_ghost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.add_req_ghost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the specified agent to the set of requested agents
+that are ghosts on this rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the ghost requested agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.delete_ghost">
+<code class="sig-name descname">delete_ghost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.delete_ghost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the specified ghost agent. This is used
+to clear the ghost when the non ghost has been removed from
+the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the unique id tuple of the ghost.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.delete_ghosted">
+<code class="sig-name descname">delete_ghosted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.delete_ghosted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified agent from the collection of agents ghosted from this
+rank and returns the ranks it is ghosted to.</p>
+<p>This is used when the ghosted agent moves off of a rank on to
+another rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the unique id tuple of the agent to remove from the ghosted collection</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary where the key is the rank the agent is ghosted to, and
+the value is the projection reference count for the agent on that rank.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.delete_local">
+<code class="sig-name descname">delete_local</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em>, <em class="sig-param"><span class="n">ghosted_deleted</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.delete_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the specified agent from the collection of local agents, and
+adds data any ghosts to be deleted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to remove</p></li>
+<li><p><strong>ghosted_deleted</strong> (<em>List</em>) – appended with a GhostedAgent if the agent to be removed is
+ghosted on another rank.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The deleted agent or None if the agent does not exist</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_core.Agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.get_ghost">
+<code class="sig-name descname">get_ghost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_uid</span></em>, <em class="sig-param"><span class="n">incr</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.get_ghost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the agent with the specified id from the collection
+of ghost agents, or None if the agent does not exist in the
+ghost agent collection. If the agent exists, its projection
+reference count is incremented by the specified amount</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent_uid</strong> (<em>agent uid tuple</em>) – the uid of the agent to get</p></li>
+<li><p><strong>incr</strong> (<em>int</em>) – the amount to increment the reference count</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified agent or None if the agent is not in the ghost
+agent collection. If the agent exists, its projection
+reference count is incremented.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_core.Agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.get_local">
+<code class="sig-name descname">get_local</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.get_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the specified agent from the collection of local agents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the unique id of the agent to get.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The agent with the specified id or None if no such agent is
+in the local collection.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_core.Agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.is_ghosted_to">
+<code class="sig-name descname">is_ghosted_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ghost_rank</span></em>, <em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.is_ghosted_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets whether or not the specified agent is ghosted to
+the specified rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ghost_rank</strong> (<em>int</em>) – the rank the agent is being sent to as a ghost</p></li>
+<li><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to get</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the agent is ghosted to the rank, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.is_requested">
+<code class="sig-name descname">is_requested</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.is_requested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets whether or not the specified agent is requested
+as a ghost on this rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the agent is requested as a ghost on this rank, otherwise
+False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.remove_ghost">
+<code class="sig-name descname">remove_ghost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.remove_ghost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrements the ghost agents reference count and removes it from this rank, if its
+reference count is 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent</strong> (<em>_core.Agent</em>) – the agent to remove</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.remove_local">
+<code class="sig-name descname">remove_local</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.remove_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified agent from the collection of local agents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to remove</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The removed agent or None if the agent does not exist</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_core.Agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.set_as_ghosted">
+<code class="sig-name descname">set_as_ghosted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ghost_ranks</span></em>, <em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.set_as_ghosted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the specified agent as ghosted from this rank to
+the specified ranks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ghost_ranks</strong> (<em>Dict</em>) – the ranks where the agent is a ghost on</p></li>
+<li><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent that is ghosted from this rank</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.tag_as_ghosted">
+<code class="sig-name descname">tag_as_ghosted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ghost_rank</span></em>, <em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.tag_as_ghosted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the specified agent from the local collection and marks it
+as ghosted on the specified rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ghost_rank</strong> (<em>int</em>) – the rank the agent is being sent to as a ghost</p></li>
+<li><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to tag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The specified agent.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_core.Agent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.core.AgentManager.untag_as_ghosted">
+<code class="sig-name descname">untag_as_ghosted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ghost_rank</span></em>, <em class="sig-param"><span class="n">agent_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.AgentManager.untag_as_ghosted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrements the ghosted reference count for the specified agent
+on the specifed rank.</p>
+<p>If the reference count goes to 0, then the agent will no longer be
+ghosted to that rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ghost_rank</strong> (<em>int</em>) – the rank the agent is being sent to as a ghost</p></li>
+<li><p><strong>agent_id</strong> (<em>Tuple</em>) – the id of the agent to tag</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.core.BoundedProjection">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">BoundedProjection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.BoundedProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol class for projections that are bounded such that an agent
+can move beyond the bounds of one instance and into another on another rank.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.core.GhostAgent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">GhostAgent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent</span></em>, <em class="sig-param"><span class="n">ref_count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.GhostAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A non-local agent copied from another rank.</p>
+<p>GhostAgent is used by the AgentManager to track and manage ghosts agents on
+a rank.</p>
+<p><strong>This is class is internal to the repast4py implementation and is NOT for users.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent</strong> (<em>_core.Agent</em>) – </p></li>
+<li><p><strong>ref_count</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="repast4py.core.GhostAgent.agent">
+<code class="sig-name descname">agent</code><a class="headerlink" href="#repast4py.core.GhostAgent.agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>the ghost agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#repast4py.core.Agent" title="repast4py.core.Agent">Agent</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.GhostAgent.ref_count">
+<code class="sig-name descname">ref_count</code><a class="headerlink" href="#repast4py.core.GhostAgent.ref_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>a reference count tracking the number of projections
+on this rank that refer to the agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">agent</code><em class="property">: Agent</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-name descname">ref_count</code><em class="property">: int</em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.core.GhostedAgent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">GhostedAgent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">agent</span></em>, <em class="sig-param"><span class="n">ghost_ranks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.GhostedAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An agent local to this rank that has been copied or “ghosted” to
+another rank.</p>
+<p>GhostedAgent is used by the AgentManager to track and manage agents that
+have been ghosted from this rank to other ranks.</p>
+<p><strong>This is class is internal to the repast4py implementation and is NOT for users.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent</strong> (<em>_core.Agent</em>) – </p></li>
+<li><p><strong>ghost_ranks</strong> (<em>Dict</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="repast4py.core.GhostedAgent.agent">
+<code class="sig-name descname">agent</code><a class="headerlink" href="#repast4py.core.GhostedAgent.agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>the ghosted agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#repast4py.core.Agent" title="repast4py.core.Agent">Agent</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.core.GhostedAgent.ghost_ranks">
+<code class="sig-name descname">ghost_ranks</code><a class="headerlink" href="#repast4py.core.GhostedAgent.ghost_ranks" title="Permalink to this definition">¶</a></dt>
+<dd><p>maps the ghosted to rank to the number references the agent has on that rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id2">
+<code class="sig-name descname">agent</code><em class="property">: Agent</em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id3">
+<code class="sig-name descname">ghost_ranks</code><em class="property">: Dict</em><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.core.SharedProjection">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.core.</code><code class="sig-name descname">SharedProjection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.core.SharedProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol class that defines the API for projections that
+are shared across multiple processes</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="repast4py.context.html"
+                        title="previous chapter">repast4py.context module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="repast4py.geometry.html"
+                        title="next chapter">repast4py.geometry module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/repast4py.core.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.geometry.html" title="repast4py.geometry module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.context.html" title="repast4py.context module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" >repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.core module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

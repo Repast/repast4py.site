@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repast4py.schedule module &#8212; repast4py  documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="repast4py.space module" href="repast4py.space.html" />
+    <link rel="prev" title="repast4py.random module" href="repast4py.random.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.space.html" title="repast4py.space module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.random.html" title="repast4py.random module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" accesskey="U">repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.schedule module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-repast4py.schedule">
+<span id="repast4py-schedule-module"></span><h1>repast4py.schedule module<a class="headerlink" href="#module-repast4py.schedule" title="Permalink to this headline">¶</a></h1>
+<p>This module includes classes and functions for scheduling events in a Repast4py
+simulation. Users will typically only use the <a class="reference internal" href="#repast4py.schedule.SharedScheduleRunner" title="repast4py.schedule.SharedScheduleRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.schedule.SharedScheduleRunner</span></code></a>.</p>
+<dl class="py class">
+<dt id="repast4py.schedule.OneTimeEvent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">OneTimeEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.schedule.ScheduledEvent</span></code></a></p>
+<p>Scheduled event that executes only once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the callable to execute when this event is executed.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="repast4py.schedule.OneTimeEvent.reschedule">
+<code class="sig-name descname">reschedule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">queue</span></em>, <em class="sig-param"><span class="n">sequence_count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Null-op as this OneTimeEvent only occurs once.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.schedule.RepeatingEvent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">RepeatingEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.schedule.ScheduledEvent</span></code></a></p>
+<p>Scheduled event that repeats at some specified interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – the interval at which to repeat.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the callable to execute when this event is executed.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="repast4py.schedule.RepeatingEvent.reschedule">
+<code class="sig-name descname">reschedule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">queue</span></em>, <em class="sig-param"><span class="n">sequence_count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reschedules this event to occur after its interval has passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>queue</strong> (<em>List</em>) – the priority queue list to schedule this event on</p></li>
+<li><p><strong>sequence_count</strong> (<em>int</em>) – the original sequeuce count for this event.
+The sequence count is used to order events scheduled for the same tick.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.schedule.Schedule">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">Schedule</code><a class="headerlink" href="#repast4py.schedule.Schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Encapsulates a dynamic schedule of events and a method
+for iterating through that schedule and exectuting those events.</p>
+<p>Events are added to the schedule for execution at a particular <em>tick</em>.
+The first valid tick is 0.
+Events will be executed in tick order, earliest before latest. Events
+scheduled for the same tick will be executed in the order in which they
+were added. If during the execution of a tick, an event is scheduled
+before the executing tick (i.e., scheduled to occur in the past) then
+that event is ignored.</p>
+<dl class="py method">
+<dt id="repast4py.schedule.Schedule.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes this schedule by repeatedly popping the next scheduled events off the queue and
+executing them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.Schedule.next_tick">
+<code class="sig-name descname">next_tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.next_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the tick of the next scheduled event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the tick at which the next scheduled event will occur or -1 if nothing is scheduled.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.Schedule.schedule_event">
+<code class="sig-name descname">schedule_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the specified event to execute at the specified tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when the event occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.Schedule.schedule_repeating_event">
+<code class="sig-name descname">schedule_repeating_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_repeating_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the specified event to execute at the specified tick,
+and repeat at the specified interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – the interval at which to repeat event execution.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when the event occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.schedule.ScheduledEvent">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">ScheduledEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A callable base class for all scheduled events. Calling
+instances of this class will execute the Callable evt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the callable to execute when this event is executed.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="repast4py.schedule.ScheduledEvent.reschedule">
+<code class="sig-name descname">reschedule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">queue</span></em>, <em class="sig-param"><span class="n">sequence_count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implemented by subclasses.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="repast4py.schedule.SharedScheduleRunner">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">SharedScheduleRunner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Encapsulates a dynamic schedule of executable events shared and
+synchronized across processes.</p>
+<p>Events are added to the scheduled for execution at a particular <em>tick</em>.
+The first valid tick is 0.
+Events will be executed in tick order, earliest before latest. Events
+scheduled for the same tick will be executed in the order in which they
+were added. If during the execution of a tick, an event is scheduled
+before the executing tick (i.e., scheduled to occur in the past) then
+that event is ignored. The scheduled is synchronized across process ranks
+by determining the global cross-process minimum next scheduled event time, and executing
+only the events schedule for that time. In this way, no schedule runs ahead of any other.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – the communicator over which this schedule is shared.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes this SharedSchedule by repeatedly popping the next scheduled events off the queue and
+executing them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.schedule_end_event">
+<code class="sig-name descname">schedule_end_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_end_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the specified event (a Callable) for execution when the schedule terminates and the
+simulation ends.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when simulation ends.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.schedule_event">
+<code class="sig-name descname">schedule_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the specified event to execute at the specified tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when the event occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.schedule_repeating_event">
+<code class="sig-name descname">schedule_repeating_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em>, <em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">evt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_repeating_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the specified event to execute at the specified tick,
+and repeat at the specified interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>at</strong> (<em>float</em>) – the time of the event.</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – the interval at which to repeat event execution.</p></li>
+<li><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when the event occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.schedule_stop">
+<code class="sig-name descname">schedule_stop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">at</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the execution of this schedule to stop at the specified tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>at</strong> (<em>float</em>) – the tick at which the schedule will stop.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops schedule execution. All events scheduled for the current tick will execute and
+then schedule execution will stop.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="repast4py.schedule.SharedScheduleRunner.tick">
+<code class="sig-name descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the currently executing tick.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.schedule.init_schedule_runner">
+<code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">init_schedule_runner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.init_schedule_runner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the default schedule runner, a dynamic schedule of executable events shared and
+synchronized across processes.</p>
+<p>Events are added to the scheduled for execution at a particular <em>tick</em>.
+The first valid tick is 0.
+Events will be executed in tick order, earliest before latest. Events
+scheduled for the same tick will be executed in the order in which they
+were added. If during the execution of a tick, an event is scheduled
+before the executing tick (i.e., scheduled to occur in the past) then
+that event is ignored. The scheduled is synchronized across process ranks
+by determining the global cross-process minimum next scheduled event time, and executing
+only the events schedule for that time. In this way, no schedule runs ahead of any other.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – the communicator over which this scheduled is shared.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The default SharedScheduledRunner instance that can be used to
+schedule events.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#repast4py.schedule.SharedScheduleRunner" title="repast4py.schedule.SharedScheduleRunner">SharedScheduleRunner</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.schedule.runner">
+<code class="sig-prename descclassname">repast4py.schedule.</code><code class="sig-name descname">runner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.runner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the default schedule runner, a dynamic schedule of executable events shared and
+synchronized across processes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The default SharedScheduledRunner instance that can be used to
+schedule events.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#repast4py.schedule.SharedScheduleRunner" title="repast4py.schedule.SharedScheduleRunner">SharedScheduleRunner</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="repast4py.random.html"
+                        title="previous chapter">repast4py.random module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="repast4py.space.html"
+                        title="next chapter">repast4py.space module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/repast4py.schedule.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.space.html" title="repast4py.space module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.random.html" title="repast4py.random module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" >repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.schedule module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

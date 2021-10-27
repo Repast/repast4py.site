@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repast4py.geometry module &#8212; repast4py  documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="repast4py.logging module" href="repast4py.logging.html" />
+    <link rel="prev" title="repast4py.core module" href="repast4py.core.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.logging.html" title="repast4py.logging module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.core.html" title="repast4py.core module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" accesskey="U">repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.geometry module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-repast4py.geometry">
+<span id="repast4py-geometry-module"></span><h1>repast4py.geometry module<a class="headerlink" href="#module-repast4py.geometry" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="repast4py.geometry.BoundingBox">
+<em class="property">class </em><code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">BoundingBox</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmin</span></em>, <em class="sig-param"><span class="n">xextent</span></em>, <em class="sig-param"><span class="n">ymin</span></em>, <em class="sig-param"><span class="n">yextent</span></em>, <em class="sig-param"><span class="n">zmin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">zextent</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.BoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<p>A BoundingBox defines an up to 3 dimensional space in terms of the minimum value and extent along each dimension.</p>
+<p>Create new instance of BoundingBox(xmin, xextent, ymin, yextent, zmin, zextent)</p>
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.xextent">
+<code class="sig-name descname">xextent</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.xextent" title="Permalink to this definition">¶</a></dt>
+<dd><p>the size of the x dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.xmin">
+<code class="sig-name descname">xmin</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.xmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>the minimun x coordinate value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.yextent">
+<code class="sig-name descname">yextent</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.yextent" title="Permalink to this definition">¶</a></dt>
+<dd><p>the size of the y dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.ymin">
+<code class="sig-name descname">ymin</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.ymin" title="Permalink to this definition">¶</a></dt>
+<dd><p>the minimun y coordinate value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.zextent">
+<code class="sig-name descname">zextent</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.zextent" title="Permalink to this definition">¶</a></dt>
+<dd><p>the size of the z dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="repast4py.geometry.BoundingBox.zmin">
+<code class="sig-name descname">zmin</code><a class="headerlink" href="#repast4py.geometry.BoundingBox.zmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>the minimun z coordinate value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_1d_nghs_periodic">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_1d_nghs_periodic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_1d_nghs_periodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 1D points of the specified point within
+the min_max inclusive range, using “periodic” semantics. See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridPeriodicBorders</span></code> for more on periodic border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least one element</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 1d numpy array with the neighboring points according to periodic border
+semantics, including the source point.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Find the neighboring points of pt(4) within the bounds of 4 and 10.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">repast4py.space</span> <span class="kn">import</span> <span class="n">DiscretePoint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pt</span> <span class="o">=</span> <span class="n">DiscretePoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nghs</span> <span class="o">=</span> <span class="n">find_1d_nghs_periodic</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">min_max</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nghs</span>
+<span class="go">array([10, 4, 5])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_1d_nghs_sticky">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_1d_nghs_sticky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_1d_nghs_sticky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 1D points of the specified point within
+the min_max inclusive range, using “sticky” semantics. See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridStickyBorders</span></code> for more on sticky border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least one element</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 1d numpy array with the neighboring points according to sticky border
+semantics, including the source point.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Find the neighboring points of pt(4) within the bounds of 2 and 10.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">repast4py.space</span> <span class="kn">import</span> <span class="n">DiscretePoint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pt</span> <span class="o">=</span> <span class="n">DiscretePoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nghs</span> <span class="o">=</span> <span class="n">find_1d_nghs_sticky</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">min_max</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nghs</span>
+<span class="go">array([3, 4, 5])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_2d_nghs_periodic">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_2d_nghs_periodic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em>, <em class="sig-param"><span class="n">pytorch_order</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_2d_nghs_periodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 2D points of the specified point within
+the min_max inclusive range, using “periodic” semantics. See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridPeriodicBorders</span></code> for more on periodic border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least two elements</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x, min_y, max_y]</p></li>
+<li><p><strong>pytorch_order</strong> – determines the order in which the neighbors are returned. If True,
+the y coordinates are returned first, otherwise, the x coordinates are returned first.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 2d numpy array with the neighboring points according to periodic border
+semantics, in the order determined by the pytorch_order argument, including the source point.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_2d_nghs_sticky">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_2d_nghs_sticky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em>, <em class="sig-param"><span class="n">pytorch_order</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_2d_nghs_sticky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 2D points of the specifed point within
+the min_max inclusive range, using “sticky” semantics.
+See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridStickyBorders</span></code> for more on sticky border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least two elements</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x, min_y, max_y]</p></li>
+<li><p><strong>pytorch_order</strong> (<em>bool</em>) – determines the order in which the neighbors are returned. If True,
+the y coordinates are returned first, otherwise, the x coordinates are returned first.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 2d numpy array with the neighboring points according to sticky border
+semantics, in the order determined by the pytorch_order argument,
+including the source point</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_3d_nghs_periodic">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_3d_nghs_periodic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em>, <em class="sig-param"><span class="n">pytorch_order</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_3d_nghs_periodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 3D points of the specified point within
+the min_max inclusive range, using “periodic” semantics. See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridPeriodicBorders</span></code> for more on periodic border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least three elements</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x, min_y, max_y, min_z, max_z]</p></li>
+<li><p><strong>pytorch_order</strong> – determines the order in which the neighbors are returned. If True,
+the y coordinates are returned first, otherwise, the x coordinates are returned first.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3d numpy array with the neighboring points according to periodic border
+semantics, in the order determined by the pytorch_order argument, including the source point.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.find_3d_nghs_sticky">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">find_3d_nghs_sticky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">min_max</span></em>, <em class="sig-param"><span class="n">pytorch_order</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.find_3d_nghs_sticky" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the neighboring 3D point of the specifed point within
+the min_max inclusive range, using “sticky” semantics. See <a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.BorderType</span></code></a> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.space.GridStickyBorders</span></code> for more on sticky border semantics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>numpy.array</em>) – A numpy scalar array with at least three elements</p></li>
+<li><p><strong>min_max</strong> (<em>numpy.array</em>) – A numpy array of format [min_x, max_x, min_y, max_y, min_z, max_z]</p></li>
+<li><p><strong>pytorch_order</strong> – determines the order in which the neighbors are returned. If True,
+the y coordinates are returned first, otherwise, the x coordinates are returned first.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3d numpy array with the neighboring points according to sticky border
+semantics, in the order determined by the pytorch_order argument, including the source point.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="repast4py.geometry.get_num_dims">
+<code class="sig-prename descclassname">repast4py.geometry.</code><code class="sig-name descname">get_num_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.geometry.get_num_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the BoundingBox’s number of dimensions.</p>
+<p>A dimension with an extent of 0 is considered not to exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>box</strong> (<a class="reference internal" href="#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>repast4py.geometry.BoundingBox</em></a>) – the bounding box</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the number of dimensions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>1D BoundingBox</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bb</span> <span class="o">=</span> <span class="n">BoundingBox</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xextent</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">yextent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zextent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_num_dims</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>2D BoundingBox</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bb</span> <span class="o">=</span> <span class="n">BoundingBox</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xextent</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">yextent</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zextent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_num_dims</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>3D BoundingBox</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bb</span> <span class="o">=</span> <span class="n">BoundingBox</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xextent</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">yextent</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zextent</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_num_dims</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="repast4py.core.html"
+                        title="previous chapter">repast4py.core module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="repast4py.logging.html"
+                        title="next chapter">repast4py.logging module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/repast4py.geometry.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.logging.html" title="repast4py.logging module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.core.html" title="repast4py.core module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" >repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.geometry module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>
