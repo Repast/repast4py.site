@@ -560,10 +560,10 @@ to the <code>mpicxx</code> (or <code>mpic++</code>) compiler wrapper provided by
 <p><a href="./user_guide.html">User&#8217;s Guide</a> (This document)</p>
 </li>
 <li>
-<p><a href="https://jozik.github.io/goes_bing/apidoc/index.html">API Docs</a></p>
+<p><a href="https://repast.github.io/repast4py.site/apidoc/index.html">API Docs</a></p>
 </li>
 <li>
-<p><a href="https://jozik.github.io/goes_bing/examples/examples.html">Example Models</a></p>
+<p><a href="https://repast.github.io/repast4py.site/examples/examples.html">Example Models</a></p>
 </li>
 </ul>
 </div>
@@ -871,7 +871,7 @@ to that process. Cross-process movement and synchronization will be discussed mo
 to stitch a simulation together across processes and that when agents move out of their local
 grid or continuous space subsection they are moved to the process responsible for the destination
 subsection. While much of this is handled internally by Repast4Py, this section describes in more detail the
-code the user needs to provide in order for moving and copying to work correctly. We will use examples from the Zombies and Rumor demonstration models. See the <a href="https://jozik.github.io/goes_bing/examples/examples.html">Repast4Py Examples</a> page to download the source code for these models and for more information on getting started with the examples.</p>
+code the user needs to provide in order for moving and copying to work correctly. We will use examples from the Zombies and Rumor demonstration models. See the <a href="https://repast.github.io/repast4py.site/examples/examples.html">Repast4Py Examples</a> page to download the source code for these models and for more information on getting started with the examples.</p>
 </div>
 <div class="sect2">
 <h3 id="_agent_id">4.1. Agent ID</h3>
@@ -899,7 +899,7 @@ between ranks.</p>
 </div>
 <div class="paragraph">
 <p>In order to ensure that all agents in Repast4Py have an agent id, all agents must inherit from the
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a> class which requires these components in its constructor. For example, in the
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a> class which requires these components in its constructor. For example, in the
 Zombies demonstration model, the <code>Human</code> agents are subclasses of the <code>repast4py.core.Agent</code>.</p>
 </div>
 <div class="listingblock">
@@ -994,7 +994,7 @@ attributes of the <code>repast4py.core.Agent</code> class.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-All agents must subclass <code>repast4py.core.Agent</code>. See the <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent">API documenation</a> for <code>repast4py.core.Agent</code> for more details of the <code>Agent</code> class.
+All agents must subclass <code>repast4py.core.Agent</code>. See the <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent">API documenation</a> for <code>repast4py.core.Agent</code> for more details of the <code>Agent</code> class.
 </td>
 </tr>
 </table>
@@ -1255,7 +1255,7 @@ Repast4Py application runs in a separate memory space from all the other process
 we need to synchronize the model state across processes by moving agents, filling
 projection buffers with ghosts, and updating ghosted states, as necessary. Synchronization
 is performed by calling the
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.synchronize"><code>SharedContext.synchronize</code></a>method and passing it your restore function.
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.synchronize"><code>SharedContext.synchronize</code></a>method and passing it your restore function.
 The <code>synchronization</code> method will use the agent <code>save</code> method(s) and your restore function
 to synchronize the state of the simulation across its processes.</p>
 </div>
@@ -1297,7 +1297,7 @@ values are logged as the total, minimum, and maximum <code>meet</code> values.</
 </ol>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://jozik.github.io/goes_bing/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
+<p>See the <a href="https://repast.github.io/repast4py.site/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
 and for more information on getting started with the examples.</p>
 </div>
 <div class="paragraph">
@@ -1359,7 +1359,7 @@ of colocations</p>
 </div>
 <div class="paragraph">
 <p>As required for all Repast4Py agent implementations, the <code>Walker</code> class subclasses
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1551,8 +1551,8 @@ instance that is used to log the total number of meets and the minimum and maxim
 </td>
 <td class="content">
 To learn more about built-in agent and grid functionality, see the
-API documentation for <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>
-and <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>repast4py.space.SharedGrid</code></a>.
+API documentation for <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>
+and <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>repast4py.space.SharedGrid</code></a>.
 </td>
 </tr>
 </table>
@@ -1702,7 +1702,7 @@ This is called at the time specified in the call to <code>schedule_stop</code>.<
 </td>
 <td class="content">
 Once the default scheduler runner has been initialized with <code>schedule.init_schedule_runner</code>, you can get a reference to it with <code>schedule.runner()</code>. See the schedule module
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.schedule.html">API documentation</a> for
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.schedule.html">API documentation</a> for
 more information on different ways to schedule events (methods and functions).
 </td>
 </tr>
@@ -1783,7 +1783,7 @@ the y dimension.</td>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td><code>space.SharedGrid</code> takes a name, its bounds, its border, and occupancy types, as well
 as a buffer size, and a communicator as arguments. See the <code>SharedGrid</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid">API documentation</a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid">API documentation</a>
 for a description of these arguments. The concept of a buffer was described in the
 <a href="#_distributed_simulation">Distributed Simulation</a> section.</td>
 </tr>
@@ -1883,7 +1883,7 @@ and performing the reduction operation on the field(s). These loggers are then a
 a <code>logging.ReducingDataSet</code>. Calling <code>logging.ReducingDataSet.log(tick)</code> will log the
 current value of the dataclass field(s) in the loggers and perform the cross-process
 reduction. See the <code>logging</code> module
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.logging.html">API documentation</a> for more information.</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.logging.html">API documentation</a> for more information.</p>
 </li>
 </ol>
 </div>
@@ -2118,7 +2118,7 @@ at tick 1 and then every tick thereafter.</p>
 <td>Calls <code>walk</code> on each <code>Walker</code> agent. <code>self.context.agents</code> returns an iterator over all the
 agents in the model. See <a href="#_walking_the_walker">Section 5.1.1, &#8220;Walking the Walker&#8221;</a> for more information on the <code>walk</code> method,
 and the <code>SharedContext</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.agents">API documenation</a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.agents">API documenation</a>
 for more information on the <code>agents</code> method.</td>
 </tr>
 <tr>
@@ -2400,7 +2400,7 @@ For example,</p>
 <p>If the parameters file or the json input contains a parameter named <code>random.seed</code>,
 the default random number generator (i.e., <code>repast4py.random.default_rng</code>) is initialized
 with that seed. See the <code>repast4py.parameters</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.parameters.html">API documentation</a> for more information.</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.parameters.html">API documentation</a> for more information.</p>
 </div>
 <div class="paragraph">
 <p>Lastly we have a simple <code>run</code> function that creates the <code>Model</code> class and calls its
@@ -2468,7 +2468,7 @@ to include those nodes that received the rumor.</p>
 <p><strong>This text assumes you have already read the <em>Repast4Py Users Guide</em> up through <a href="#_tutorial_1_a_simple_random_walk_model">Tutorial 1</a>.</strong></p>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://jozik.github.io/goes_bing/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
+<p>See the <a href="https://repast.github.io/repast4py.site/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
 and for more information on getting started with the examples.</p>
 </div>
 </div>
@@ -2564,7 +2564,7 @@ and write it out to <code>fname</code>.</td>
 </table>
 </div>
 <div class="paragraph">
-<p>See the API documentation for <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.network.html#repast4py.network.write_network"><code>repast4py.network.write_network</code></a> for more information.</p>
+<p>See the API documentation for <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.network.html#repast4py.network.write_network"><code>repast4py.network.write_network</code></a> for more information.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2829,7 +2829,7 @@ The created network is added to the specified context as part of this call.</td>
 <td>Gets a reference to the named network from the context. The network
 input file specifies the network name on its first line. This is the
 network created in &lt;3&gt; and is an instance of an
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.network.html#repast4py.network.UndirectedSharedNetwork"><code>UndirectedSharedNetwork</code></a>.</td>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.network.html#repast4py.network.UndirectedSharedNetwork"><code>UndirectedSharedNetwork</code></a>.</td>
 </tr>
 </table>
 </div>
@@ -2960,7 +2960,7 @@ specified by the input parameter.
 <div class="paragraph">
 <p>As we saw in <a href="#_tutorial_1_a_simple_random_walk_model">Tutorial 1</a>, there are
 two types of logging supported by Repast4Py, tabular and reduce-type logging (see the <code>repast4py.logging</code> module
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.logging.html#module-repast4py.logging">API documentation</a> for more information).</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.logging.html#module-repast4py.logging">API documentation</a> for more information).</p>
 </div>
 <div class="paragraph">
 <p>The Rumor model uses the second of these log types. The dataclass that we log records
@@ -3218,7 +3218,7 @@ it using the passed in <code>create_rumor_agent</code> function.</p>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
 <td>The nid, agent_type, and rank arguments are read from the network
 input file and passed to this function. See the <code>repast4py.network.read_network</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.network.html#repast4py.network.read_network">API documentation</a> for more info.</td>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.network.html#repast4py.network.read_network">API documentation</a> for more info.</td>
 </tr>
 </table>
 </div>
@@ -3415,7 +3415,7 @@ the fewest number of Zombies</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://jozik.github.io/goes_bing/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
+<p>See the <a href="https://repast.github.io/repast4py.site/examples/examples.html">Repast4Py Examples</a> page to download the source code for this model
 and for more information on getting started with the examples.</p>
 </div>
 <div class="paragraph">
@@ -3491,8 +3491,8 @@ the transition from human to zombie are described in <a href="#_the_zombie_step_
 </div>
 <div class="paragraph">
 <p>Both agents inhabit two two-dimensional projections:
-a <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>SharedGrid</code></a> and a
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace"><code>SharedCSpace</code></a>. The
+a <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>SharedGrid</code></a> and a
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace"><code>SharedCSpace</code></a>. The
 first of these is a matrix type grid where the agent locations are expressible
 as discrete integer coordinates. The second is a continuous space where the agent locations
 are expressible as continuous floating point coordinates. The grid is used to implement agent
@@ -3509,7 +3509,7 @@ detail in the <a href="#_implementing_spatial_projections">Implementing Spatial 
 <h4 id="_the_zombie_agent">7.1.1. The Zombie Agent</h4>
 <div class="paragraph">
 <p>We implement our Zombie agent using the <code>Zombie</code> class. As required for all Repast4Py agent implementations, the <code>Zombie</code> class extends
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3552,7 +3552,7 @@ detail in the <a href="#_implementing_spatial_projections">Implementing Spatial 
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>In order to uniquely identify the agent across all ranks in the simulation, the
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a> constructor takes the following three arguments: an integer id that uniquely identifies an agent on the process where it was created, a non-negative integer identifying the type of the agent, and the rank on which the agent is created.</td>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a> constructor takes the following three arguments: an integer id that uniquely identifies an agent on the process where it was created, a non-negative integer identifying the type of the agent, and the rank on which the agent is created.</td>
 </tr>
 </table>
 </div>
@@ -3685,7 +3685,7 @@ coordinates of the zombie&#8217;s current location.</td>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Create a temporary
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.DiscretePoint">DiscretePoint</a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.DiscretePoint">DiscretePoint</a>
 for use in the loop over the Moore neighborhood coordinates.</td>
 </tr>
 <tr>
@@ -3728,7 +3728,7 @@ to the <code>maximum</code> list.</td>
 <tr>
 <td><i class="conum" data-value="11"></i><b>11</b></td>
 <td>Select one of the <em>maximum neighbor locations</em> at random using Repast4Py&#8217;s default random number
-generator. See the <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.random.html">API documentation</a> for more details.</td>
+generator. See the <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.random.html">API documentation</a> for more details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="12"></i><b>12</b></td>
@@ -3823,7 +3823,7 @@ As each zombie is only moving 0.25 spaces, it is possible for the grid location 
 </ul>
 </div>
 <div class="paragraph">
-<p>We implement our human agents using the <code>Human</code> class, subclassing <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.
+<p>We implement our human agents using the <code>Human</code> class, subclassing <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.core.html#repast4py.core.Agent"><code>repast4py.core.Agent</code></a>, passing it the components of the unique agent id tuple.
 The constructor also initializes the infected boolean to False and the duration of infection to 0.</p>
 </div>
 <div class="listingblock">
@@ -4138,8 +4138,8 @@ been  described in detail in <a href="#_saving_and_restoring_agents">Section 4.2
 <div class="paragraph">
 <p>After initializing the schedule, adding events, and creating the context to hold the population of agents,
 the <code>Model</code> constructor creates the two spatial projections, the
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>SharedGrid</code></a> and the
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace"><code>SharedCSpace</code></a>.</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid"><code>SharedGrid</code></a> and the
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace"><code>SharedCSpace</code></a>.</p>
 </div>
 <div class="paragraph">
 <p>Before we create our projections, we first must define a <code>BoundingBox</code> equal to the desired size of our space:</p>
@@ -4200,7 +4200,7 @@ the y dimension.</td>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Create the grid projection. <code>repast4py.space.SharedGrid</code> takes a name, its bounds, its border,
 and occupancy types, as well as a buffer size, and a MPI communicator as arguments. See the <code>SharedGrid</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid">API documentation</a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid">API documentation</a>
 for a description of these arguments. The concept of a buffer was described in the
 <a href="#_distributed_simulation">Distributed Simulation</a> section.</td>
 </tr>
@@ -4214,7 +4214,7 @@ processes</td>
 <td>Create the space projection. <code>repast4py.space.SharedCSpace</code> takes a name, its bounds, its border,
 and occupancy types, as well as a buffer size, a MPI communicator, and a
 tree threshold as arguments. See the <code>SharedCSpace</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace">API documentation</a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace">API documentation</a>
 for a description of these arguments.</td>
 </tr>
 <tr>
@@ -4275,7 +4275,7 @@ argument is moving to.</td>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Move the agent to the specified point in the continuous space, creating a new ContinuousPoint from
 the x and y coordinates. See the <code>move</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace.move">API documentation</a> for
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace.move">API documentation</a> for
 more details.</td>
 </tr>
 <tr>
@@ -4284,7 +4284,7 @@ more details.</td>
 a DiscretePoint as its location argument. To create one, we take the floor of the
 x and y coordinates, convert those to ints, and create a DiscretePoint from those ints.
 See the <code>move</code>
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid.move">API documentation</a> for
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedGrid.move">API documentation</a> for
 more details.</td>
 </tr>
 </table>
@@ -4406,7 +4406,7 @@ a <code>BoundingBox</code>.</td>
 <tr>
 <td><i class="conum" data-value="10"></i><b>10</b></td>
 <td>Choose a random x and y location within the current local bounds using repast4py&#8217;s
-default random number generator. See the <a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.random.html">API documentation</a> for more details.</td>
+default random number generator. See the <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.random.html">API documentation</a> for more details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="11"></i><b>11</b></td>
@@ -4479,7 +4479,7 @@ for the next time a human becomes a zombie.</td>
 <div class="paragraph">
 <p>As we saw in <a href="#_tutorial_1_a_simple_random_walk_model">Tutorial 1</a>, there are
 two types of logging supported by Repast4Py, tabular and reduce-type logging (see the <code>repast4py.logging</code> module
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.logging.html#module-repast4py.logging">API documentation</a> for more information).</p>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.logging.html#module-repast4py.logging">API documentation</a> for more information).</p>
 </div>
 <div class="paragraph">
 <p>The Zombies model uses the second of these log types. The dataclass that we log records
@@ -4568,7 +4568,7 @@ of humans and zombies at that tick.</p>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
 <td>Get the number of agents of the specified types currently in the context.
-<a href="https://jozik.github.io/goes_bing/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.size"><code>context.size</code></a>
+<a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.context.html#repast4py.context.SharedContext.size"><code>context.size</code></a>
 takes a list of agent type ids and returns a dictionary where the type ids are the keys
 and the values are the number of agents of that type.</td>
 </tr>
