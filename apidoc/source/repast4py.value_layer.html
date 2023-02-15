@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>repast4py.value_layer module &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="repast4py.util module" href="repast4py.util.html" /> 
@@ -41,11 +43,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-repast4py.value_layer">
-<span id="repast4py-value-layer-module"></span><h1>repast4py.value_layer module<a class="headerlink" href="#module-repast4py.value_layer" title="Permalink to this headline">¶</a></h1>
+  <section id="module-repast4py.value_layer">
+<span id="repast4py-value-layer-module"></span><h1>repast4py.value_layer module<a class="headerlink" href="#module-repast4py.value_layer" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="repast4py.value_layer.ReadWriteValueLayer">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.value_layer.</code><code class="sig-name descname">ReadWriteValueLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em>, <em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">borders</span></em>, <em class="sig-param"><span class="n">buffer_size</span></em>, <em class="sig-param"><span class="n">init_value</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">torch.float64</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ReadWriteValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Encapsulates two <a class="reference internal" href="#repast4py.value_layer.SharedValueLayer" title="repast4py.value_layer.SharedValueLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.value_layer.SharedValueLayer</span></code></a>, one of which functions as a read layer,
 and the other as the write layer. A ValueLayer is cross-process shared N-dimensional raster type matrix where each
@@ -71,11 +73,11 @@ the <a class="reference internal" href="#repast4py.value_layer.ValueLayer.grid" 
 with ‘random’ to initialize the matrix with a random value.</p>
 <p><strong>Note: 3D SharedValueLayers are not yet supported and will raise an Exception.</strong></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – the communicator containing all the ranks over which this SharedValueLayer is shared.</p></li>
-<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>repast4py.geometry.BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
-<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>repast4py.space.BorderType</em></a>) – the border semantics - <code class="xref py py-attr docutils literal notranslate"><span class="pre">BorderType.Sticky</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">BorderType.Periodic</span></code>.</p></li>
+<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
+<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>BorderType</em></a>) – the border semantics - <code class="xref py py-attr docutils literal notranslate"><span class="pre">BorderType.Sticky</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">BorderType.Periodic</span></code>.</p></li>
 <li><p><strong>buffer_size</strong> (<em>int</em>) – the size of the ValueLayers’ buffered areas. This single value is used for all dimensions.</p></li>
 <li><p><strong>init_value</strong> – the initial value of each cell in the read and write ValueLayers: either a numeric value or
 <code class="samp docutils literal notranslate"><span class="pre">'random'</span></code> to specify a random initialization.</p></li>
@@ -83,70 +85,70 @@ with ‘random’ to initialize the matrix with a random value.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.bounds">
-<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.bounds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the dimensions of the read and write layers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox">BoundingBox</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the value at the specified point from the read layer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pt</strong> (<em>_space.DiscretePoint</em>) – the location to get the value of</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pt</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint" title="_space.DiscretePoint"><em>DiscretePoint</em></a>) – the location to get the value of</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The value at the specified location.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.get_nghs">
-<code class="sig-name descname">get_nghs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.get_nghs">
+<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the neighboring values and locations around the specified point.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>pt</strong> – the point whose neighbors to get</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A two elelment tuple consisting of the neighboring values as a pytorch tensor, and
 the neighboring locations as a np.array: (values, ngh_locations). The first value in
 the values tensor is the value of the first location in the ngh_locations array, and so forth.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Tuple</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.read_grid">
-<em class="property">property </em><code class="sig-name descname">read_grid</code><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.read_grid" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.read_grid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.read_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in the read layer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pytorch.tensor</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.set">
-<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the value at the specified location on the write layer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pt</strong> (<em>_space.DiscretePoint</em>) – the location to set the value of</p></li>
+<li><p><strong>pt</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint" title="_space.DiscretePoint"><em>DiscretePoint</em></a>) – the location to set the value of</p></li>
 <li><p><strong>val</strong> – the value to set the location to</p></li>
 </ul>
 </dd>
@@ -154,18 +156,18 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.swap_layers">
-<code class="sig-name descname">swap_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.swap_layers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.swap_layers">
+<span class="sig-name descname"><span class="pre">swap_layers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.swap_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Swaps the two layers. The write layer becomes the read and the read becomes the write</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.value_layer.ReadWriteValueLayer.write_grid">
-<em class="property">property </em><code class="sig-name descname">write_grid</code><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.write_grid" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.write_grid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.write_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in the write layer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pytorch.tensor</p>
 </dd>
 </dl>
@@ -174,9 +176,9 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.value_layer.SharedValueLayer">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.value_layer.</code><code class="sig-name descname">SharedValueLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em>, <em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">borders</span></em>, <em class="sig-param"><span class="n">buffer_size</span></em>, <em class="sig-param"><span class="n">init_value</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">torch.float64</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.SharedValueLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#repast4py.value_layer.ValueLayer" title="repast4py.value_layer.ValueLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.value_layer.ValueLayer</span></code></a></p>
+<dt class="sig sig-object py" id="repast4py.value_layer.SharedValueLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">SharedValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.SharedValueLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#repast4py.value_layer.ValueLayer" title="repast4py.value_layer.ValueLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueLayer</span></code></a></p>
 <p>A cross-process shared N-dimensional raster type matrix where each discrete integer coordinate
 contains a numeric value.</p>
 <p>A SharedValueLayer is shared over all the ranks in the specified communicator by sub-dividing the global bounds into
@@ -193,11 +195,11 @@ its own SharedValueLayer.</p>
 the <a class="reference internal" href="#repast4py.value_layer.ValueLayer.grid" title="repast4py.value_layer.ValueLayer.grid"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ValueLayer.grid</span></code></a> property.</p>
 <p><strong>Note: 3D SharedValueLayers are not yet supported and will raise an Exception.</strong></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – the communicator containing all the ranks over which this SharedValueLayer is shared.</p></li>
-<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>repast4py.geometry.BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
-<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>repast4py.space.BorderType</em></a>) – the border semantics: BorderType.Sticky or BorderType.Periodic.</p></li>
+<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
+<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>BorderType</em></a>) – the border semantics: BorderType.Sticky or BorderType.Periodic.</p></li>
 <li><p><strong>buffer_size</strong> (<em>int</em>) – the size of this  ValueLayers’s buffered area. This single value is used for all dimensions.</p></li>
 <li><p><strong>init_value</strong> – the initial value of each cell in this ValueLayer: either a numeric value or
 ‘random’ to specify a random initialization.</p></li>
@@ -208,8 +210,8 @@ the <a class="reference internal" href="#repast4py.value_layer.ValueLayer.grid" 
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.value_layer.ValueLayer">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.value_layer.</code><code class="sig-name descname">ValueLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">borders</span></em>, <em class="sig-param"><span class="n">init_value</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">torch.float64</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>N-dimensional raster type matrix where each discrete integer coordinate
 contains a numeric value.</p>
@@ -217,80 +219,80 @@ contains a numeric value.</p>
 provides access to this tensor. A ValueLayer can be initialized with a specified value or
 with <code class="samp docutils literal notranslate"><span class="pre">'random'</span></code> to initialize the matrix with a random value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>repast4py.geometry.BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
-<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>repast4py.space.BorderType</em></a>) – the border semantics: BorderType.Sticky or BorderType.Periodic.</p></li>
+<li><p><strong>bounds</strong> (<a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox"><em>BoundingBox</em></a>) – the dimensions of the ValueLayer</p></li>
+<li><p><strong>borders</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType" title="repast4py.space.BorderType"><em>BorderType</em></a>) – the border semantics: BorderType.Sticky or BorderType.Periodic.</p></li>
 <li><p><strong>init_value</strong> – the initial value of each cell in this ValueLayer: either a numeric value or
 <code class="samp docutils literal notranslate"><span class="pre">'random'</span></code> to specify a random initialization.</p></li>
 <li><p><strong>dtype</strong> (<em>torch.dtype</em>) – the numeric type of this ValueLayer. Defaults to torch.float64.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="repast4py.value_layer.ValueLayer.bounds">
-<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#repast4py.value_layer.ValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.bounds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the dimensions of this ValueLayer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox" title="repast4py.geometry.BoundingBox">BoundingBox</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ValueLayer.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the value at the specified point</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pt</strong> (<em>_space.DiscretePoint</em>) – the location to get the value of</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pt</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint" title="_space.DiscretePoint"><em>DiscretePoint</em></a>) – the location to get the value of</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The value at the specified location.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ValueLayer.get_nghs">
-<code class="sig-name descname">get_nghs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.get_nghs">
+<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the neighboring values and locations around the specified point.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pt</strong> (<em>_space.DiscretePoint</em>) – the point whose neighbors to get</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pt</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint" title="_space.DiscretePoint"><em>DiscretePoint</em></a>) – the point whose neighbors to get</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A two elelment tuple consisting of the neighboring values as a pytorch tensor, and
 the neighboring locations as a np.array: (values, ngh_locations). The first value in
 the values tensor is the value of the first location in the ngh_locations array, and so forth.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Tuple</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.value_layer.ValueLayer.grid">
-<em class="property">property </em><code class="sig-name descname">grid</code><a class="headerlink" href="#repast4py.value_layer.ValueLayer.grid" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.grid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in this ValueLayer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pytorch.tensor</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.value_layer.ValueLayer.set">
-<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the value at the specified location</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pt</strong> (<em>_space.DiscretePoint</em>) – the location to set the value of</p></li>
+<li><p><strong>pt</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint" title="_space.DiscretePoint"><em>DiscretePoint</em></a>) – the location to set the value of</p></li>
 <li><p><strong>val</strong> – the value to set the location to</p></li>
 </ul>
 </dd>
@@ -299,7 +301,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -308,9 +310,39 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="repast4py.util.html"
-                        title="previous chapter">repast4py.util module</a></p>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">repast4py.value_layer module</a><ul>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.bounds"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.bounds</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.get"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.get()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.get_nghs"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.get_nghs()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.read_grid"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.read_grid</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.set"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.set()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.swap_layers"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.swap_layers()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ReadWriteValueLayer.write_grid"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.write_grid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.value_layer.SharedValueLayer"><code class="docutils literal notranslate"><span class="pre">SharedValueLayer</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer"><code class="docutils literal notranslate"><span class="pre">ValueLayer</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer.bounds"><code class="docutils literal notranslate"><span class="pre">ValueLayer.bounds</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer.get"><code class="docutils literal notranslate"><span class="pre">ValueLayer.get()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer.get_nghs"><code class="docutils literal notranslate"><span class="pre">ValueLayer.get_nghs()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer.grid"><code class="docutils literal notranslate"><span class="pre">ValueLayer.grid</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.value_layer.ValueLayer.set"><code class="docutils literal notranslate"><span class="pre">ValueLayer.set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="repast4py.util.html"
+                          title="previous chapter">repast4py.util module</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -322,12 +354,12 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -352,7 +384,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>

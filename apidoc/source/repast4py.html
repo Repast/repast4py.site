@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>repast4py package &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="repast4py.context module" href="repast4py.context.html" />
@@ -44,30 +46,357 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="repast4py-package">
-<h1>repast4py package<a class="headerlink" href="#repast4py-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+  <section id="repast4py-package">
+<h1>repast4py package<a class="headerlink" href="#repast4py-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.context.html">repast4py.context module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.core.html">repast4py.core module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.geometry.html">repast4py.geometry module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.logging.html">repast4py.logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.network.html">repast4py.network module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.parameters.html">repast4py.parameters module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.random.html">repast4py.random module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.schedule.html">repast4py.schedule module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.space.html">repast4py.space module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.util.html">repast4py.util module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repast4py.value_layer.html">repast4py.value_layer module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.context.html">repast4py.context module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext"><code class="docutils literal notranslate"><span class="pre">SharedContext</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.add"><code class="docutils literal notranslate"><span class="pre">SharedContext.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.add_projection"><code class="docutils literal notranslate"><span class="pre">SharedContext.add_projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.add_value_layer"><code class="docutils literal notranslate"><span class="pre">SharedContext.add_value_layer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.agent"><code class="docutils literal notranslate"><span class="pre">SharedContext.agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.agents"><code class="docutils literal notranslate"><span class="pre">SharedContext.agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.contains_type"><code class="docutils literal notranslate"><span class="pre">SharedContext.contains_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.get_projection"><code class="docutils literal notranslate"><span class="pre">SharedContext.get_projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.ghost_agent"><code class="docutils literal notranslate"><span class="pre">SharedContext.ghost_agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.move_agents"><code class="docutils literal notranslate"><span class="pre">SharedContext.move_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.remove"><code class="docutils literal notranslate"><span class="pre">SharedContext.remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.request_agents"><code class="docutils literal notranslate"><span class="pre">SharedContext.request_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.size"><code class="docutils literal notranslate"><span class="pre">SharedContext.size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext.synchronize"><code class="docutils literal notranslate"><span class="pre">SharedContext.synchronize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.core.html">repast4py.core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent"><code class="docutils literal notranslate"><span class="pre">Agent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent.id"><code class="docutils literal notranslate"><span class="pre">Agent.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent.local_rank"><code class="docutils literal notranslate"><span class="pre">Agent.local_rank</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent.type"><code class="docutils literal notranslate"><span class="pre">Agent.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent.uid"><code class="docutils literal notranslate"><span class="pre">Agent.uid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent.uid_rank"><code class="docutils literal notranslate"><span class="pre">Agent.uid_rank</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.add_ghost"><code class="docutils literal notranslate"><span class="pre">AgentManager.add_ghost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.add_ghosts_to_projection"><code class="docutils literal notranslate"><span class="pre">AgentManager.add_ghosts_to_projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.add_local"><code class="docutils literal notranslate"><span class="pre">AgentManager.add_local()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.add_req_ghost"><code class="docutils literal notranslate"><span class="pre">AgentManager.add_req_ghost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.delete_ghost"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_ghost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.delete_ghosted"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_ghosted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.delete_local"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_local()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.get_ghost"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_ghost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.get_local"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_local()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.is_ghosted_to"><code class="docutils literal notranslate"><span class="pre">AgentManager.is_ghosted_to()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.is_requested"><code class="docutils literal notranslate"><span class="pre">AgentManager.is_requested()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.remove_ghost"><code class="docutils literal notranslate"><span class="pre">AgentManager.remove_ghost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.remove_local"><code class="docutils literal notranslate"><span class="pre">AgentManager.remove_local()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.set_as_ghosted"><code class="docutils literal notranslate"><span class="pre">AgentManager.set_as_ghosted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.tag_as_ghosted"><code class="docutils literal notranslate"><span class="pre">AgentManager.tag_as_ghosted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.AgentManager.untag_as_ghosted"><code class="docutils literal notranslate"><span class="pre">AgentManager.untag_as_ghosted()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.BoundedProjection"><code class="docutils literal notranslate"><span class="pre">BoundedProjection</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostAgent"><code class="docutils literal notranslate"><span class="pre">GhostAgent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostAgent.agent"><code class="docutils literal notranslate"><span class="pre">GhostAgent.agent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostAgent.ref_count"><code class="docutils literal notranslate"><span class="pre">GhostAgent.ref_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#id0"><code class="docutils literal notranslate"><span class="pre">GhostAgent.agent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#id1"><code class="docutils literal notranslate"><span class="pre">GhostAgent.ref_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostedAgent"><code class="docutils literal notranslate"><span class="pre">GhostedAgent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostedAgent.agent"><code class="docutils literal notranslate"><span class="pre">GhostedAgent.agent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#repast4py.core.GhostedAgent.ghost_ranks"><code class="docutils literal notranslate"><span class="pre">GhostedAgent.ghost_ranks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#id2"><code class="docutils literal notranslate"><span class="pre">GhostedAgent.agent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.core.html#id3"><code class="docutils literal notranslate"><span class="pre">GhostedAgent.ghost_ranks</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.core.html#repast4py.core.SharedProjection"><code class="docutils literal notranslate"><span class="pre">SharedProjection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.geometry.html">repast4py.geometry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox"><code class="docutils literal notranslate"><span class="pre">BoundingBox</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.xextent"><code class="docutils literal notranslate"><span class="pre">BoundingBox.xextent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.xmin"><code class="docutils literal notranslate"><span class="pre">BoundingBox.xmin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.yextent"><code class="docutils literal notranslate"><span class="pre">BoundingBox.yextent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.ymin"><code class="docutils literal notranslate"><span class="pre">BoundingBox.ymin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.zextent"><code class="docutils literal notranslate"><span class="pre">BoundingBox.zextent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.BoundingBox.zmin"><code class="docutils literal notranslate"><span class="pre">BoundingBox.zmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_1d_nghs_periodic"><code class="docutils literal notranslate"><span class="pre">find_1d_nghs_periodic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_1d_nghs_sticky"><code class="docutils literal notranslate"><span class="pre">find_1d_nghs_sticky()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_2d_nghs_periodic"><code class="docutils literal notranslate"><span class="pre">find_2d_nghs_periodic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_2d_nghs_sticky"><code class="docutils literal notranslate"><span class="pre">find_2d_nghs_sticky()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_3d_nghs_periodic"><code class="docutils literal notranslate"><span class="pre">find_3d_nghs_periodic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.find_3d_nghs_sticky"><code class="docutils literal notranslate"><span class="pre">find_3d_nghs_sticky()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.geometry.html#repast4py.geometry.get_num_dims"><code class="docutils literal notranslate"><span class="pre">get_num_dims()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.logging.html">repast4py.logging module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DCDataSource"><code class="docutils literal notranslate"><span class="pre">DCDataSource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DCDataSource.dtype"><code class="docutils literal notranslate"><span class="pre">DCDataSource.dtype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DCDataSource.name"><code class="docutils literal notranslate"><span class="pre">DCDataSource.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DCDataSource.value"><code class="docutils literal notranslate"><span class="pre">DCDataSource.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DataSource"><code class="docutils literal notranslate"><span class="pre">DataSource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DataSource.dtype"><code class="docutils literal notranslate"><span class="pre">DataSource.dtype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DataSource.name"><code class="docutils literal notranslate"><span class="pre">DataSource.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.DataSource.value"><code class="docutils literal notranslate"><span class="pre">DataSource.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger.dtype"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.dtype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger.log"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger.name"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger.reduce"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.reduce()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataLogger.size"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.size</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataSet"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataSet.close"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataSet.log"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.ReducingDataSet.write"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.TabularLogger"><code class="docutils literal notranslate"><span class="pre">TabularLogger</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.TabularLogger.close"><code class="docutils literal notranslate"><span class="pre">TabularLogger.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.TabularLogger.log_row"><code class="docutils literal notranslate"><span class="pre">TabularLogger.log_row()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.TabularLogger.write"><code class="docutils literal notranslate"><span class="pre">TabularLogger.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.logging.html#repast4py.logging.create_loggers"><code class="docutils literal notranslate"><span class="pre">create_loggers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.network.html">repast4py.network module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.graph"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.comm"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.comm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.names"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.names</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.add_edge"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.add_edge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.is_directed"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.is_directed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.DirectedSharedNetwork.num_edges"><code class="docutils literal notranslate"><span class="pre">DirectedSharedNetwork.num_edges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork"><code class="docutils literal notranslate"><span class="pre">SharedNetwork</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.graph"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.add"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.add_nodes"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.add_nodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.clear_edges"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.clear_edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.contains_edge"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.contains_edge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.edge_count"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.edge_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.node_count"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.node_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.remove"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.remove_edge"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.remove_edge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork.update_edge"><code class="docutils literal notranslate"><span class="pre">SharedNetwork.update_edge()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.graph"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.graph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.comm"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.comm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.name"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.add_edge"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.add_edge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.is_directed"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.is_directed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.network.html#repast4py.network.UndirectedSharedNetwork.num_edges"><code class="docutils literal notranslate"><span class="pre">UndirectedSharedNetwork.num_edges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.network.html#repast4py.network.read_network"><code class="docutils literal notranslate"><span class="pre">read_network()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.network.html#repast4py.network.write_network"><code class="docutils literal notranslate"><span class="pre">write_network()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.parameters.html">repast4py.parameters module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.parameters.html#repast4py.parameters.create_args_parser"><code class="docutils literal notranslate"><span class="pre">create_args_parser()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.parameters.html#repast4py.parameters.init_params"><code class="docutils literal notranslate"><span class="pre">init_params()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.parameters.html#repast4py.parameters.params"><code class="docutils literal notranslate"><span class="pre">params</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.random.html">repast4py.random module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.random.html#repast4py.random.default_rng"><code class="docutils literal notranslate"><span class="pre">default_rng</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.random.html#repast4py.random.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.random.html#repast4py.random.seed"><code class="docutils literal notranslate"><span class="pre">seed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.schedule.html">repast4py.schedule module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.OneTimeEvent"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.OneTimeEvent.reschedule"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent.reschedule()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.OneTimeEvent.void"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent.void()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.PriorityType"><code class="docutils literal notranslate"><span class="pre">PriorityType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.PriorityType.BY_PRIORITY"><code class="docutils literal notranslate"><span class="pre">PriorityType.BY_PRIORITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.PriorityType.FIRST"><code class="docutils literal notranslate"><span class="pre">PriorityType.FIRST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.PriorityType.LAST"><code class="docutils literal notranslate"><span class="pre">PriorityType.LAST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.PriorityType.RANDOM"><code class="docutils literal notranslate"><span class="pre">PriorityType.RANDOM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.RepeatingEvent"><code class="docutils literal notranslate"><span class="pre">RepeatingEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.RepeatingEvent.reschedule"><code class="docutils literal notranslate"><span class="pre">RepeatingEvent.reschedule()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.RepeatingEvent.void"><code class="docutils literal notranslate"><span class="pre">RepeatingEvent.void()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.Schedule"><code class="docutils literal notranslate"><span class="pre">Schedule</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.Schedule.execute"><code class="docutils literal notranslate"><span class="pre">Schedule.execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.Schedule.next_tick"><code class="docutils literal notranslate"><span class="pre">Schedule.next_tick()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.Schedule.schedule_event"><code class="docutils literal notranslate"><span class="pre">Schedule.schedule_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.Schedule.schedule_repeating_event"><code class="docutils literal notranslate"><span class="pre">Schedule.schedule_repeating_event()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.add_evt"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.add_evt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.execute"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.execute_evts"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.execute_evts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.reset"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.size"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduleGroup.sort"><code class="docutils literal notranslate"><span class="pre">ScheduleGroup.sort()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent"><code class="docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent.reschedule"><code class="docutils literal notranslate"><span class="pre">ScheduledEvent.reschedule()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent.void"><code class="docutils literal notranslate"><span class="pre">ScheduledEvent.void()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.execute"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_end_event"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.schedule_end_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_event"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.schedule_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_repeating_event"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.schedule_repeating_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_stop"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.schedule_stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.stop"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.tick"><code class="docutils literal notranslate"><span class="pre">SharedScheduleRunner.tick()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.create_arg_evt"><code class="docutils literal notranslate"><span class="pre">create_arg_evt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.init_schedule_runner"><code class="docutils literal notranslate"><span class="pre">init_schedule_runner()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.runner"><code class="docutils literal notranslate"><span class="pre">runner()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.space.html">repast4py.space module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType"><code class="docutils literal notranslate"><span class="pre">BorderType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType.Periodic"><code class="docutils literal notranslate"><span class="pre">BorderType.Periodic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.BorderType.Sticky"><code class="docutils literal notranslate"><span class="pre">BorderType.Sticky</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology"><code class="docutils literal notranslate"><span class="pre">CartesianTopology</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology.comm"><code class="docutils literal notranslate"><span class="pre">CartesianTopology.comm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology.compute_buffer_nghs"><code class="docutils literal notranslate"><span class="pre">CartesianTopology.compute_buffer_nghs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology.coordinates"><code class="docutils literal notranslate"><span class="pre">CartesianTopology.coordinates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology.local_bounds"><code class="docutils literal notranslate"><span class="pre">CartesianTopology.local_bounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.CartesianTopology.procs_per_dim"><code class="docutils literal notranslate"><span class="pre">CartesianTopology.procs_per_dim</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint._reset_from_array"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint._reset_from_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint.coordinates"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint.coordinates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint.x"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint.x</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint.y"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint.y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousPoint.z"><code class="docutils literal notranslate"><span class="pre">ContinuousPoint.z</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.add"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.contains"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.contains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.get_agent"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.get_agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.get_agents"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.get_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.get_agents_within"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.get_agents_within()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.get_location"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.get_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.move"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.name"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.ContinuousSpace.remove"><code class="docutils literal notranslate"><span class="pre">ContinuousSpace.remove()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint"><code class="docutils literal notranslate"><span class="pre">DiscretePoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint._reset_from_array"><code class="docutils literal notranslate"><span class="pre">DiscretePoint._reset_from_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint.coordinates"><code class="docutils literal notranslate"><span class="pre">DiscretePoint.coordinates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint.x"><code class="docutils literal notranslate"><span class="pre">DiscretePoint.x</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint.y"><code class="docutils literal notranslate"><span class="pre">DiscretePoint.y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.DiscretePoint.z"><code class="docutils literal notranslate"><span class="pre">DiscretePoint.z</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.add"><code class="docutils literal notranslate"><span class="pre">Grid.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.contains"><code class="docutils literal notranslate"><span class="pre">Grid.contains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.get_agent"><code class="docutils literal notranslate"><span class="pre">Grid.get_agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.get_agents"><code class="docutils literal notranslate"><span class="pre">Grid.get_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.get_location"><code class="docutils literal notranslate"><span class="pre">Grid.get_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.move"><code class="docutils literal notranslate"><span class="pre">Grid.move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.name"><code class="docutils literal notranslate"><span class="pre">Grid.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.Grid.remove"><code class="docutils literal notranslate"><span class="pre">Grid.remove()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.OccupancyType"><code class="docutils literal notranslate"><span class="pre">OccupancyType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.OccupancyType.Multiple"><code class="docutils literal notranslate"><span class="pre">OccupancyType.Multiple</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.OccupancyType.Single"><code class="docutils literal notranslate"><span class="pre">OccupancyType.Single</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace"><code class="docutils literal notranslate"><span class="pre">SharedCSpace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.add"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.contains"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.contains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_agent"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_agents"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_agents_within"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_agents_within()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_local_bounds"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_local_bounds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_location"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_num_agents"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_num_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.get_random_local_pt"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.get_random_local_pt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.move"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.name"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace.remove"><code class="docutils literal notranslate"><span class="pre">SharedCSpace.remove()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid"><code class="docutils literal notranslate"><span class="pre">SharedGrid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.add"><code class="docutils literal notranslate"><span class="pre">SharedGrid.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.contains"><code class="docutils literal notranslate"><span class="pre">SharedGrid.contains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_agent"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_agent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_agents"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_local_bounds"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_local_bounds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_location"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_num_agents"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_num_agents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.get_random_local_pt"><code class="docutils literal notranslate"><span class="pre">SharedGrid.get_random_local_pt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.move"><code class="docutils literal notranslate"><span class="pre">SharedGrid.move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.name"><code class="docutils literal notranslate"><span class="pre">SharedGrid.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid.remove"><code class="docutils literal notranslate"><span class="pre">SharedGrid.remove()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.util.html">repast4py.util module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.util.html#repast4py.util.find_free_filename"><code class="docutils literal notranslate"><span class="pre">find_free_filename()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.util.html#repast4py.util.is_empty"><code class="docutils literal notranslate"><span class="pre">is_empty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repast4py.value_layer.html">repast4py.value_layer module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.bounds"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.bounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.get"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.get_nghs"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.get_nghs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.read_grid"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.read_grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.set"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.swap_layers"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.swap_layers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ReadWriteValueLayer.write_grid"><code class="docutils literal notranslate"><span class="pre">ReadWriteValueLayer.write_grid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.SharedValueLayer"><code class="docutils literal notranslate"><span class="pre">SharedValueLayer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer"><code class="docutils literal notranslate"><span class="pre">ValueLayer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer.bounds"><code class="docutils literal notranslate"><span class="pre">ValueLayer.bounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer.get"><code class="docutils literal notranslate"><span class="pre">ValueLayer.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer.get_nghs"><code class="docutils literal notranslate"><span class="pre">ValueLayer.get_nghs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer.grid"><code class="docutils literal notranslate"><span class="pre">ValueLayer.grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="repast4py.value_layer.html#repast4py.value_layer.ValueLayer.set"><code class="docutils literal notranslate"><span class="pre">ValueLayer.set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
-<div class="section" id="module-repast4py">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-repast4py" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="module-repast4py">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-repast4py" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -76,8 +405,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">repast4py package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-repast4py">Module contents</a></li>
@@ -85,12 +415,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="modules.html"
-                        title="previous chapter">repast4py</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="repast4py.context.html"
-                        title="next chapter">repast4py.context module</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="modules.html"
+                          title="previous chapter">repast4py</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="repast4py.context.html"
+                          title="next chapter">repast4py.context module</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -102,12 +437,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -134,7 +469,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>

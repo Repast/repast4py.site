@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>repast4py.logging module &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="repast4py.network module" href="repast4py.network.html" />
@@ -45,13 +47,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-repast4py.logging">
-<span id="repast4py-logging-module"></span><h1>repast4py.logging module<a class="headerlink" href="#module-repast4py.logging" title="Permalink to this headline">¶</a></h1>
+  <section id="module-repast4py.logging">
+<span id="repast4py-logging-module"></span><h1>repast4py.logging module<a class="headerlink" href="#module-repast4py.logging" title="Permalink to this heading">¶</a></h1>
 <p>The Logging module contains classes and functions for logging data produced by a
 repast4py simulation to a file.</p>
 <dl class="py class">
-<dt id="repast4py.logging.DCDataSource">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">DCDataSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_class</span></em>, <em class="sig-param"><span class="n">field_name</span></em>, <em class="sig-param"><span class="n">ds_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.DCDataSource" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.DCDataSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">DCDataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.DCDataSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A DCDataSource implements the <a class="reference internal" href="#repast4py.logging.DataSource" title="repast4py.logging.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.logging.DataSource</span></code></a> protocol for Python
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">dataclasses.dataclass</span></code> objects. Each DCDataSource gets its data to log
@@ -61,9 +63,9 @@ specified dataclass. By default, the field name will be used as the data source
 name, but an optional data source name can be supplied. The data source
 name will become the column header in the logged tabular data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_class</strong> (<em>dataclasses.dataclass</em>) – the dataclass containing the values to log</p></li>
+<li><p><strong>data_class</strong> (<em>dataclass</em>) – the dataclass containing the values to log</p></li>
 <li><p><strong>field_name</strong> (<em>str</em>) – the name of the field in the dataclass to log</p></li>
 <li><p><strong>ds_name</strong> (<em>str</em>) – an optional name that will be used as the column
 header if supplied, otherwise the field_name will be
@@ -71,34 +73,34 @@ used.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="repast4py.logging.DCDataSource.dtype">
-<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#repast4py.logging.DCDataSource.dtype" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DCDataSource.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#repast4py.logging.DCDataSource.dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the numpy dtype of this DCDataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The numpy dtype of this DCDataSource.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.DCDataSource.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#repast4py.logging.DCDataSource.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DCDataSource.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#repast4py.logging.DCDataSource.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name of this DCDataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The name of this DataSource.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.DCDataSource.value">
-<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#repast4py.logging.DCDataSource.value" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DCDataSource.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#repast4py.logging.DCDataSource.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the value of this DCDataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The value of this DataSource.</p>
 </dd>
 </dl>
@@ -107,40 +109,40 @@ used.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.logging.DataSource">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">DataSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.DataSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dt class="sig sig-object py" id="repast4py.logging.DataSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.DataSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></p>
 <p>Protocol class for objects that can be used during logging as a
 source of data. Such objects must have a name, a type, and be able return
 the data to log via a “value” property.</p>
-<dl class="py method">
-<dt id="repast4py.logging.DataSource.dtype">
-<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#repast4py.logging.DataSource.dtype" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DataSource.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dtype</span></em><a class="headerlink" href="#repast4py.logging.DataSource.dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the numpy dtype of this DataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The numpy dtype of this DataSource.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.DataSource.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#repast4py.logging.DataSource.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DataSource.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#repast4py.logging.DataSource.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name of this DataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The name of this DataSource.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.DataSource.value">
-<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#repast4py.logging.DataSource.value" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.DataSource.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#repast4py.logging.DataSource.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the value (i.e., the data to log) of this DataSource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The value (i.e., the data to log) of this DataSource.</p>
 </dd>
 </dl>
@@ -149,79 +151,79 @@ the data to log via a “value” property.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.logging.ReducingDataLogger">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">ReducingDataLogger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_source</span></em>, <em class="sig-param"><span class="n">op</span></em>, <em class="sig-param"><span class="n">rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">ReducingDataLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Creates a ReducingDataRecorder that gets its data from the
 specified source, reduces that data using the specified op and runs on
 the specified rank.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_source</strong> (<a class="reference internal" href="#repast4py.logging.DataSource" title="repast4py.logging.DataSource"><em>repast4py.logging.DataSource</em></a>) – the source of the data to reduce.</p></li>
+<li><p><strong>data_source</strong> (<a class="reference internal" href="#repast4py.logging.DataSource" title="repast4py.logging.DataSource"><em>DataSource</em></a>) – the source of the data to reduce.</p></li>
 <li><p><strong>op</strong> – an mpi reduction operator, e.g. MPI.SUM</p></li>
 <li><p><strong>rank</strong> (<em>int</em>) – the rank of this ReducingDataLogger</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="repast4py.logging.ReducingDataLogger.dtype">
-<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.dtype" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger.dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the numpy dtype of this ReducingDataLogger. This
 is forwarded from the data source.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The numpy dtype of this ReducingDataLogger.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.ReducingDataLogger.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.log" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs the current value of this ReducingDataRecorder’s
 data source.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.ReducingDataLogger.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name of this ReducingDataLogger.</p>
 <p>This is forwarded from the data source.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The name of this ReducingDataLogger.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.ReducingDataLogger.reduce">
-<code class="sig-name descname">reduce</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.reduce" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger.reduce">
+<span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduces the values on all processes in the specified
 communicator to single values using the op specified in the
 constructor. The reduction is performed on each logged value
 at which point, the logged values are discarded.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – the communicator over whose ranks the reduction is performed.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comm</strong> (<em>Intracomm</em>) – the communicator over whose ranks the reduction is performed.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A numpy array containing the reduced values.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>numpy.array</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>array</em></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="repast4py.logging.ReducingDataLogger.size">
-<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.size" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataLogger.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#repast4py.logging.ReducingDataLogger.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the number of values this logger currently holds. This is
 set back to 0 on a reduce.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of values this logger currently holds.</p>
 </dd>
 </dl>
@@ -230,8 +232,8 @@ set back to 0 on a reduce.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.logging.ReducingDataSet">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">ReducingDataSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_loggers</span></em>, <em class="sig-param"><span class="n">comm</span></em>, <em class="sig-param"><span class="n">fpath</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="o">=</span><span class="default_value">','</span></em>, <em class="sig-param"><span class="n">buffer_size</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">ReducingDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A ReducingDataSet represents a tabular data set where each column
 is produced by a ReducingDataLogger and where the name of each logger is
@@ -242,11 +244,11 @@ the specified data loggers which are reduced across the specified
 communicator. The data_loggers can be created using the <a class="reference internal" href="#repast4py.logging.create_loggers" title="repast4py.logging.create_loggers"><code class="xref py py-func docutils literal notranslate"><span class="pre">repast4py.logging.create_loggers()</span></code></a>
 function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_loggers</strong> (<em>List</em><em>[</em><a class="reference internal" href="#repast4py.logging.ReducingDataLogger" title="repast4py.logging.ReducingDataLogger"><em>repast4py.logging.ReducingDataLogger</em></a><em>]</em>) – a list of ReducingDataLoggers that will produce the tabular data,
+<li><p><strong>data_loggers</strong> (<em>List</em><em>[</em><a class="reference internal" href="#repast4py.logging.ReducingDataLogger" title="repast4py.logging.ReducingDataLogger"><em>ReducingDataLogger</em></a><em>]</em>) – a list of ReducingDataLoggers that will produce the tabular data,
 one data_logger per column.</p></li>
-<li><p><strong>comm</strong> (<em>mpi4py.MPI.Comm</em>) – the communicator to reduce over</p></li>
+<li><p><strong>comm</strong> (<em>Comm</em>) – the communicator to reduce over</p></li>
 <li><p><strong>fpath</strong> (<em>str</em>) – the file to write the data to</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – the delimiter to use to separate the column values</p></li>
 <li><p><strong>buffer_size</strong> (<em>int</em>) – the number of values to log before writing to a file.</p></li>
@@ -254,27 +256,27 @@ one data_logger per column.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="repast4py.logging.ReducingDataSet.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataSet.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Closes this ReducingDataSet, writing any remaining
 data to the file.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.ReducingDataSet.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tick</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.log" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataSet.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tick</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs the data for the specified tick, by calling
 log on each data logger contained in this ReducingDataSet.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tick</strong> (<em>float</em>) – the tick (timestamp) at which the data is logged.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.ReducingDataSet.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.ReducingDataSet.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.ReducingDataSet.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes any currently logged, but not yet reduced
 data to this ReducingDataSet’s file, by reducing and then writing the
 resulting data to the file.</p>
@@ -283,15 +285,15 @@ resulting data to the file.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="repast4py.logging.TabularLogger">
-<em class="property">class </em><code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">TabularLogger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comm</span></em>, <em class="sig-param"><span class="n">fpath</span></em>, <em class="sig-param"><span class="n">headers</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="o">=</span><span class="default_value">','</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.TabularLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">TabularLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Logs arbitrary values by row in a delimited tabular format. All the rows
 logged by each rank are concatenated on a write into multiple rows.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>comm</strong> (<em>mpi4py.MPI.Comm</em>) – the communicator to reduce over</p></li>
+<li><p><strong>comm</strong> (<em>Comm</em>) – the communicator to reduce over</p></li>
 <li><p><strong>fpath</strong> (<em>str</em>) – the file to write the data to</p></li>
 <li><p><strong>headers</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the header values for each column</p></li>
 <li><p><strong>delimiter</strong> (<em>str</em>) – the seperator to use to seperate the column values</p></li>
@@ -299,20 +301,20 @@ logged by each rank are concatenated on a write into multiple rows.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="repast4py.logging.TabularLogger.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.TabularLogger.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Closes this TabularLogger, writing any rows of
 data to the file.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.TabularLogger.log_row">
-<code class="sig-name descname">log_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.log_row" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.TabularLogger.log_row">
+<span class="sig-name descname"><span class="pre">log_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.log_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs the specified values as a row in the tabular output.</p>
 <p>Each value in the argument list is written to a column in the
 order they appear in the argument list.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args</strong> – variable length argument list containing the values to log.
 The order of the values should correspond to the headers argument
 in the constructor.</p>
@@ -321,14 +323,14 @@ in the constructor.</p>
 <p class="rubric">Examples</p>
 <p>The following will log the value of the tick, person_id variables, and 12, and 24
 as a row in the tabular data.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">log_item</span><span class="p">(</span><span class="n">tick</span><span class="p">,</span> <span class="n">person_id</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">log_row</span><span class="p">(</span><span class="n">tick</span><span class="p">,</span> <span class="n">person_id</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt id="repast4py.logging.TabularLogger.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.TabularLogger.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.TabularLogger.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes all the currently logged rows to a file by gathering all the
 rows from all ranks, concatenating them, and writing the total collection of rows to
 the file specified in the constructor. This is a collective
@@ -338,28 +340,28 @@ operation and must be called by all ranks in the communicator.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="repast4py.logging.create_loggers">
-<code class="sig-prename descclassname">repast4py.logging.</code><code class="sig-name descname">create_loggers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_class</span></em>, <em class="sig-param"><span class="n">op</span></em>, <em class="sig-param"><span class="n">rank</span></em>, <em class="sig-param"><span class="n">names</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.create_loggers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="repast4py.logging.create_loggers">
+<span class="sig-prename descclassname"><span class="pre">repast4py.logging.</span></span><span class="sig-name descname"><span class="pre">create_loggers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.logging.create_loggers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates ReducingDataLogger-s from the fields in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">dataclasses.dataclass</span></code>, optionally
 constraining the loggers to log only from specified fields. By default the
 names argument is None and all the dataclass fields will be logged.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_class</strong> (<em>dataclasses.dataclass</em>) – the dataclass providing the values to log</p></li>
+<li><p><strong>data_class</strong> (<em>dataclass</em>) – the dataclass providing the values to log</p></li>
 <li><p><strong>op</strong> – an mpi reduction operator (e.g., MPI.SUM)</p></li>
 <li><p><strong>rank</strong> (<em>int</em>) – the rank of this process</p></li>
-<li><p><strong>names</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – a Python dict where the keys are the names of the dataclass fields to log, and the values
+<li><p><strong>names</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – a Python dict where the keys are the names of the dataclass fields to log, and the values
 are the names of the column header in the output tabular data. If
 value is None, then the dataclass field name will be used as the data source
 column name.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of ReducingDataLoggers that can be added to a ReducingDataSet for logging.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[<a class="reference internal" href="#repast4py.logging.ReducingDataLogger" title="repast4py.logging.ReducingDataLogger">repast4py.logging.ReducingDataLogger</a>]</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#repast4py.logging.ReducingDataLogger" title="repast4py.logging.ReducingDataLogger"><em>ReducingDataLogger</em></a>]</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -375,7 +377,7 @@ operation. We append the new loggers to the original list with <code class="samp
 </div>
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -384,12 +386,58 @@ operation. We append the new loggers to the original list with <code class="samp
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="repast4py.geometry.html"
-                        title="previous chapter">repast4py.geometry module</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="repast4py.network.html"
-                        title="next chapter">repast4py.network module</a></p>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">repast4py.logging module</a><ul>
+<li><a class="reference internal" href="#repast4py.logging.DCDataSource"><code class="docutils literal notranslate"><span class="pre">DCDataSource</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.logging.DCDataSource.dtype"><code class="docutils literal notranslate"><span class="pre">DCDataSource.dtype</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.DCDataSource.name"><code class="docutils literal notranslate"><span class="pre">DCDataSource.name</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.DCDataSource.value"><code class="docutils literal notranslate"><span class="pre">DCDataSource.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.logging.DataSource"><code class="docutils literal notranslate"><span class="pre">DataSource</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.logging.DataSource.dtype"><code class="docutils literal notranslate"><span class="pre">DataSource.dtype</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.DataSource.name"><code class="docutils literal notranslate"><span class="pre">DataSource.name</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.DataSource.value"><code class="docutils literal notranslate"><span class="pre">DataSource.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger.dtype"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.dtype</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger.log"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.log()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger.name"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.name</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger.reduce"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.reduce()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataLogger.size"><code class="docutils literal notranslate"><span class="pre">ReducingDataLogger.size</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataSet"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataSet.close"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.close()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataSet.log"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.log()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.ReducingDataSet.write"><code class="docutils literal notranslate"><span class="pre">ReducingDataSet.write()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.logging.TabularLogger"><code class="docutils literal notranslate"><span class="pre">TabularLogger</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.logging.TabularLogger.close"><code class="docutils literal notranslate"><span class="pre">TabularLogger.close()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.TabularLogger.log_row"><code class="docutils literal notranslate"><span class="pre">TabularLogger.log_row()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.logging.TabularLogger.write"><code class="docutils literal notranslate"><span class="pre">TabularLogger.write()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.logging.create_loggers"><code class="docutils literal notranslate"><span class="pre">create_loggers()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="repast4py.geometry.html"
+                          title="previous chapter">repast4py.geometry module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="repast4py.network.html"
+                          title="next chapter">repast4py.network module</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -401,12 +449,12 @@ operation. We append the new loggers to the original list with <code class="samp
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -434,7 +482,7 @@ operation. We append the new loggers to the original list with <code class="samp
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>
 </html>
