@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="author" content="Version 2.0 February 2023">
+<meta name="author" content="Version 2.1 September 2024">
 <title>Repast for Python (Repast4Py) User Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -519,7 +519,7 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <div id="header">
 <h1>Repast for Python (Repast4Py) User Guide</h1>
 <div class="details">
-<span id="author" class="author">Version 2.0 February 2023</span><br>
+<span id="author" class="author">Version 2.1 September 2024</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -599,7 +599,7 @@ WSL can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/install">
 </div>
 <div class="paragraph">
 <p>Under Linux, MPI can be installed using your OS&#8217;s package manager. For example,
-under Ubuntu 20.04 (and thus WSL), the mpich MPI implementation can be installed with:</p>
+under Ubuntu 22.04 (and thus WSL), the mpich MPI implementation can be installed with:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -620,11 +620,12 @@ Check the resource&#8217;s documentation on available software for more details.
 <p>Repast4Py can be downloaded and installed from PyPI using pip.
 Since Repast4Py includes native MPI C&#43;&#43; code that needs to be compiled,
 the C compiler <code>CC</code> environment variable must be set
-to the <code>mpicxx</code> (or <code>mpic++</code>) compiler wrapper provided by your MPI installation.</p>
+to the <code>mpicxx</code> (or <code>mpic++</code>) compiler wrapper provided by your MPI installation.
+Depending on the operating system the <code>CXX</code> variable may also need to be set.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>env CC=mpicxx pip install repast4py</pre>
+<pre>env CC=mpicxx CXX=mpicxx pip install repast4py</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -949,6 +950,24 @@ Be sure to specify a buffer size appropriate for agent behavior. For example, if
 <div class="paragraph">
 <p>Agents can, of course, move around grids and continuous spaces. When an agent moves beyond the borders of its local subsection then it is moved from that rank to the rank of the new subsection to which it has moved. For example, if in <a href="#img-grid-buffer">Figure 2</a>, agent <code>D4</code> moves from grid coordinate 4,4 to 4,2 then it will be moved during Repast4Py&#8217;s synchronization phase to process 2 where it becomes local
 to that process. Cross-process movement and synchronization will be discussed more in the next sections.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When working with Repast4Py&#8217;s <a href="https://repast.github.io/repast4py.site/apidoc/source/repast4py.space.html#repast4py.space.SharedCSpace">continuous space</a> (an N-dimensional cartesian space where agents can occupy locations defined by a continuous floating point coordinate), use the <code>tree_threshold</code> parameter to tune
+the speed of the search for agents within the buffered area. This search occurs whenever the buffer is refreshed
+during synchronization. The continuous space uses a <a href="https://en.wikipedia.org/wiki/Quadtree">tree</a> (quad or oct depending on the number of dimensions) to efficiently determine which agents are within the buffered region.
+Each node in the tree represents an area of the continuous space and contains the point locations of agents within that area. A spatial query, such as that used to find agents in the buffered region, first determines which nodes of the
+tree intersect the queried area, and then which points / agents in those nodes intersect the queried area. In this way,
+the buffer&#8217;s spatial query does not have to iterate through all the occupied points in a continuous space, a potentially time
+consuming operation, when updating the buffer areas. The <code>tree_threshold</code> parameter specifies the maximum number of unique points in a spatial index tree node. When this number is reached, the node splits and the points are redistributed among the node&#8217;s children. When specifing a <code>tree_threshold</code>, the intention is to lower the number of points / agents that need to be evaluated in a spatial query while balancing that against the overhead it takes to split the tree nodes. A value of 100 is probably a reasonable starting point, but experimenting with different values is encouraged.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -5292,7 +5311,7 @@ but it is often useful to have an entry type function that initializes and start
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-15 13:59:58 -0500
+Last updated 2024-09-17 12:05:30 -0400
 </div>
 </div>
 </body>
