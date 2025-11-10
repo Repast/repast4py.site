@@ -1,25 +1,21 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>repast4py.value_layer module &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=ad52900a" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="repast4py.util module" href="repast4py.util.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,10 +40,10 @@
           <div class="body" role="main">
             
   <section id="module-repast4py.value_layer">
-<span id="repast4py-value-layer-module"></span><h1>repast4py.value_layer module<a class="headerlink" href="#module-repast4py.value_layer" title="Permalink to this heading">¶</a></h1>
+<span id="repast4py-value-layer-module"></span><h1>repast4py.value_layer module<a class="headerlink" href="#module-repast4py.value_layer" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ReadWriteValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ReadWriteValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Encapsulates two <a class="reference internal" href="#repast4py.value_layer.SharedValueLayer" title="repast4py.value_layer.SharedValueLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.value_layer.SharedValueLayer</span></code></a>, one of which functions as a read layer,
 and the other as the write layer. A ValueLayer is cross-process shared N-dimensional raster type matrix where each
@@ -87,7 +83,7 @@ with ‘random’ to initialize the matrix with a random value.</p>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.bounds">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.bounds" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the dimensions of the read and write layers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -98,7 +94,7 @@ with ‘random’ to initialize the matrix with a random value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the value at the specified point from the read layer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -112,7 +108,7 @@ with ‘random’ to initialize the matrix with a random value.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.get_nghs">
-<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.get_nghs" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the neighboring values and locations around the specified point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -131,7 +127,7 @@ the values tensor is the value of the first location in the ngh_locations array,
 
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.read_grid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.read_grid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.read_grid" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in the read layer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
@@ -143,7 +139,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.set" title="Link to this definition">¶</a></dt>
 <dd><p>Sets the value at the specified location on the write layer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -157,13 +153,13 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.swap_layers">
-<span class="sig-name descname"><span class="pre">swap_layers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.swap_layers" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">swap_layers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.swap_layers" title="Link to this definition">¶</a></dt>
 <dd><p>Swaps the two layers. The write layer becomes the read and the read becomes the write</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.value_layer.ReadWriteValueLayer.write_grid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.write_grid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_grid</span></span><a class="headerlink" href="#repast4py.value_layer.ReadWriteValueLayer.write_grid" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in the write layer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
@@ -177,7 +173,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.value_layer.SharedValueLayer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">SharedValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.SharedValueLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">SharedValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.SharedValueLayer" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#repast4py.value_layer.ValueLayer" title="repast4py.value_layer.ValueLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueLayer</span></code></a></p>
 <p>A cross-process shared N-dimensional raster type matrix where each discrete integer coordinate
 contains a numeric value.</p>
@@ -211,7 +207,7 @@ the <a class="reference internal" href="#repast4py.value_layer.ValueLayer.grid" 
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.value_layer.</span></span><span class="sig-name descname"><span class="pre">ValueLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.float64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>N-dimensional raster type matrix where each discrete integer coordinate
 contains a numeric value.</p>
@@ -231,7 +227,7 @@ with <code class="samp docutils literal notranslate"><span class="pre">'random'<
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.bounds">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.bounds" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the dimensions of this ValueLayer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -242,7 +238,7 @@ with <code class="samp docutils literal notranslate"><span class="pre">'random'<
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the value at the specified point</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -256,7 +252,7 @@ with <code class="samp docutils literal notranslate"><span class="pre">'random'<
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.get_nghs">
-<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get_nghs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_nghs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.get_nghs" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the neighboring values and locations around the specified point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -275,7 +271,7 @@ the values tensor is the value of the first location in the ngh_locations array,
 
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.grid">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.grid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.grid" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the pytorch tensor that stores the values in this ValueLayer. Note that
 the tensor is not addressed in x, y, z order so see the pytorch docs when using the tensor directly.</p>
 <dl class="field-list simple">
@@ -287,7 +283,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.value_layer.ValueLayer.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.value_layer.ValueLayer.set" title="Link to this definition">¶</a></dt>
 <dd><p>Sets the value at the specified location</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -308,7 +304,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
@@ -350,7 +346,7 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -358,13 +354,13 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -383,8 +379,8 @@ the tensor is not addressed in x, y, z order so see the pytorch docs when using 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2023, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

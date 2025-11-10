@@ -1,26 +1,22 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>repast4py.context module &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=ad52900a" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="repast4py.core module" href="repast4py.core.html" />
     <link rel="prev" title="repast4py package" href="repast4py.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,10 +44,10 @@
           <div class="body" role="main">
             
   <section id="module-repast4py.context">
-<span id="repast4py-context-module"></span><h1>repast4py.context module<a class="headerlink" href="#module-repast4py.context" title="Permalink to this heading">¶</a></h1>
+<span id="repast4py-context-module"></span><h1>repast4py.context module<a class="headerlink" href="#module-repast4py.context" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.context.</span></span><span class="sig-name descname"><span class="pre">SharedContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.context.</span></span><span class="sig-name descname"><span class="pre">SharedContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Encapsulates a population of agents on a single process rank.</p>
 <p>A SharedContext may have one or more projections associated with it to
@@ -66,7 +62,7 @@ among SharedContexts in the distributed model</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add" title="Link to this definition">¶</a></dt>
 <dd><p>Adds the specified agent to this SharedContext.</p>
 <p>The agent will also be added to any projections currently in this SharedContext</p>
 <dl class="field-list simple">
@@ -78,7 +74,7 @@ among SharedContexts in the distributed model</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.add_projection">
-<span class="sig-name descname"><span class="pre">add_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add_projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add_projection" title="Link to this definition">¶</a></dt>
 <dd><p>Adds the specified projection to this SharedContext.</p>
 <p>Any agents currently in this context will be added to the projection.</p>
 <dl class="field-list simple">
@@ -90,7 +86,7 @@ among SharedContexts in the distributed model</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.add_value_layer">
-<span class="sig-name descname"><span class="pre">add_value_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add_value_layer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_value_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.add_value_layer" title="Link to this definition">¶</a></dt>
 <dd><p>Adds the specified value_layer to the this context.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -101,7 +97,7 @@ among SharedContexts in the distributed model</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.agent">
-<span class="sig-name descname"><span class="pre">agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.agent" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.agent" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the specified agent from the collection of local
 agents in this context.</p>
 <dl class="field-list simple">
@@ -125,13 +121,13 @@ agents in this context.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.agents">
-<span class="sig-name descname"><span class="pre">agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.agents" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.agents" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the agents in this SharedContext, optionally of the specified type, count or shuffled.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>agent_type</strong> (<em>int</em>) – the type id of the agent, defaults to None.</p></li>
-<li><p><strong>count</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – the number of agents to return, defaults to None, meaning return all
+<li><p><strong>count</strong> (<em>int</em>) – the number of agents to return, defaults to None, meaning return all
 the agents.</p></li>
 <li><p><strong>shuffle</strong> (<em>bool</em>) – whether or not the iteration order is shuffled. If true,
 the order is shuffled. If false, the iteration order is the order of
@@ -156,7 +152,7 @@ an iterable over agents of that type will be returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.contains_type">
-<span class="sig-name descname"><span class="pre">contains_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.contains_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">contains_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.contains_type" title="Link to this definition">¶</a></dt>
 <dd><p>Get whether or not this SharedContexts contains any agents of the specified type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -174,7 +170,7 @@ otherwise False.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.get_projection">
-<span class="sig-name descname"><span class="pre">get_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.get_projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.get_projection" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the named projection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -195,7 +191,7 @@ otherwise False.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.ghost_agent">
-<span class="sig-name descname"><span class="pre">ghost_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.ghost_agent" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ghost_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.ghost_agent" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the specified agent from the collection of ghost
 agents in this context.</p>
 <dl class="field-list simple">
@@ -213,7 +209,7 @@ agents in this context.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.move_agents">
-<span class="sig-name descname"><span class="pre">move_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents_to_move</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.move_agents" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">move_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents_to_move</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.move_agents" title="Link to this definition">¶</a></dt>
 <dd><p>Moves agents from this rank to another rank where it becomes a
 local agent.</p>
 <p>The list of agents to move must be agents currently local to
@@ -236,7 +232,7 @@ return an agent.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.remove">
-<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.remove" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.remove" title="Link to this definition">¶</a></dt>
 <dd><p>Removes the specified agent from this SharedContext</p>
 <p>This agent is also removed from any projections associated with this SharedContext.
 If the agent is shared as a ghost on any other ranks it will be removed from those
@@ -250,7 +246,7 @@ ranks during the next synchronization.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.request_agents">
-<span class="sig-name descname"><span class="pre">request_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requested_agents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.request_agents" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requested_agents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.request_agents" title="Link to this definition">¶</a></dt>
 <dd><p>Requests agents from other ranks to be copied to this rank as ghosts.</p>
 <p>This is a collective operation and all ranks must call it, regardless
 of whether agents are being requested by that rank. The requested agents
@@ -276,11 +272,11 @@ return an agent.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.size" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_type_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.size" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the number of local agents in this SharedContext, optionally by type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>agent_type_ids</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – a list of the agent type ids identifying the agent types to count.
+<dd class="field-odd"><p><strong>agent_type_ids</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – a list of the agent type ids identifying the agent types to count.
 If this is None then the total size is returned with an agent type id of -1.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -294,7 +290,7 @@ If this is None then the total size is returned with an agent type id of -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.context.SharedContext.synchronize">
-<span class="sig-name descname"><span class="pre">synchronize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restore_agent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_ghosts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.synchronize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">synchronize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restore_agent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_ghosts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.context.SharedContext.synchronize" title="Link to this definition">¶</a></dt>
 <dd><p>Synchronizes the model state across processes by moving agents, filling
 projection buffers with ghosts, updating ghosted state and so forth.</p>
 <dl class="field-list simple">
@@ -320,7 +316,7 @@ with this SharedContext are also synchronized. Defaults to True.</p></li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
@@ -364,7 +360,7 @@ with this SharedContext are also synchronized. Defaults to True.</p></li>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -372,13 +368,13 @@ with this SharedContext are also synchronized. Defaults to True.</p></li>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -400,8 +396,8 @@ with this SharedContext are also synchronized. Defaults to True.</p></li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2023, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

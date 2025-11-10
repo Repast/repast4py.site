@@ -1,26 +1,22 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>repast4py.schedule module &#8212; repast4py  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=ad52900a" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="repast4py.space module" href="repast4py.space.html" />
     <link rel="prev" title="repast4py.random module" href="repast4py.random.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,12 +44,43 @@
           <div class="body" role="main">
             
   <section id="module-repast4py.schedule">
-<span id="repast4py-schedule-module"></span><h1>repast4py.schedule module<a class="headerlink" href="#module-repast4py.schedule" title="Permalink to this heading">¶</a></h1>
+<span id="repast4py-schedule-module"></span><h1>repast4py.schedule module<a class="headerlink" href="#module-repast4py.schedule" title="Link to this heading">¶</a></h1>
 <p>This module includes classes and functions for scheduling events in a Repast4py
 simulation. Users will typically only use the <a class="reference internal" href="#repast4py.schedule.SharedScheduleRunner" title="repast4py.schedule.SharedScheduleRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">repast4py.schedule.SharedScheduleRunner</span></code></a>.</p>
 <dl class="py class">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">EvtType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.EvtType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType.END">
+<span class="sig-name descname"><span class="pre">END</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#repast4py.schedule.EvtType.END" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType.ONE_TIME">
+<span class="sig-name descname"><span class="pre">ONE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#repast4py.schedule.EvtType.ONE_TIME" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType.REPEATING">
+<span class="sig-name descname"><span class="pre">REPEATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#repast4py.schedule.EvtType.REPEATING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType.STOP">
+<span class="sig-name descname"><span class="pre">STOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#repast4py.schedule.EvtType.STOP" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="repast4py.schedule.EvtType.VOID">
+<span class="sig-name descname"><span class="pre">VOID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#repast4py.schedule.EvtType.VOID" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.OneTimeEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">OneTimeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">OneTimeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a></p>
 <p>Scheduled event that executes only once.</p>
 <dl class="field-list simple">
@@ -67,18 +94,20 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.OneTimeEvent.reschedule">
-<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent.reschedule" title="Link to this definition">¶</a></dt>
 <dd><p>Null-op as this OneTimeEvent only occurs once.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.OneTimeEvent.void">
-<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent.void" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.OneTimeEvent.void" title="Link to this definition">¶</a></dt>
 <dd><p>Voids this ScheduledEvent so that it will not execute</p>
 </dd></dl>
 
@@ -86,34 +115,34 @@ execute before those with a higher value.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.PriorityType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">PriorityType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.PriorityType" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">PriorityType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.PriorityType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <p>Enums used to specify the priority type for scheduled events.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="repast4py.schedule.PriorityType.BY_PRIORITY">
-<span class="sig-name descname"><span class="pre">BY_PRIORITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.BY_PRIORITY" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">BY_PRIORITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.BY_PRIORITY" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="repast4py.schedule.PriorityType.FIRST">
-<span class="sig-name descname"><span class="pre">FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.FIRST" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.FIRST" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="repast4py.schedule.PriorityType.LAST">
-<span class="sig-name descname"><span class="pre">LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.LAST" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.LAST" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="repast4py.schedule.PriorityType.RANDOM">
-<span class="sig-name descname"><span class="pre">RANDOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.RANDOM" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">RANDOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#repast4py.schedule.PriorityType.RANDOM" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.RepeatingEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">RepeatingEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">RepeatingEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a></p>
 <p>Scheduled event that repeats at some specified interval.</p>
 <dl class="field-list simple">
@@ -128,12 +157,14 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.RepeatingEvent.reschedule">
-<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent.reschedule" title="Link to this definition">¶</a></dt>
 <dd><p>Reschedules this event to occur after its interval has passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -148,7 +179,7 @@ The sequence count is used to order events scheduled for the same tick.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.RepeatingEvent.void">
-<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent.void" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.RepeatingEvent.void" title="Link to this definition">¶</a></dt>
 <dd><p>Voids this ScheduledEvent so that it will not execute</p>
 </dd></dl>
 
@@ -156,7 +187,7 @@ The sequence count is used to order events scheduled for the same tick.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.Schedule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><a class="headerlink" href="#repast4py.schedule.Schedule" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><a class="headerlink" href="#repast4py.schedule.Schedule" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Encapsulates a dynamic schedule of events and a method
 for iterating through that schedule and exectuting those events.</p>
@@ -169,14 +200,14 @@ If an event is scheduled before the current executing tick (i.e., scheduled to o
 then that event is ignored.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.Schedule.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.execute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.execute" title="Link to this definition">¶</a></dt>
 <dd><p>Executes this schedule by repeatedly popping the next scheduled events off the queue and
 executing them.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.Schedule.next_tick">
-<span class="sig-name descname"><span class="pre">next_tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.next_tick" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">next_tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.next_tick" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the tick of the next scheduled event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -190,7 +221,7 @@ executing them.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.Schedule.schedule_event">
-<span class="sig-name descname"><span class="pre">schedule_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_event" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the specified event to execute at the specified tick with
 the specified priority. By default, events are scheduled with a random priority type.</p>
 <p>An event’s priority_type and priority determines when it will execute
@@ -235,6 +266,8 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -248,7 +281,7 @@ execute before those with a higher value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.Schedule.schedule_repeating_event">
-<span class="sig-name descname"><span class="pre">schedule_repeating_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_repeating_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_repeating_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.Schedule.schedule_repeating_event" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the specified event to execute at the specified tick with the specified
 priority, and to repeat at the specified interval. By default, events are scheduled with
 a random priority type.</p>
@@ -295,6 +328,8 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -310,37 +345,37 @@ execute before those with a higher value.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">ScheduleGroup</span></span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">ScheduleGroup</span></span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A ScheduleGroup is used internally by repast4py to order events for execution.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.add_evt">
-<span class="sig-name descname"><span class="pre">add_evt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.add_evt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_evt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.add_evt" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>evt</strong> (<a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><em>ScheduledEvent</em></a>) – </p>
+<dd class="field-odd"><p><strong>evt</strong> (<a class="reference internal" href="#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><em>ScheduledEvent</em></a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.execute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.execute" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>queue</strong> (<em>List</em>) – </p>
+<dd class="field-odd"><p><strong>queue</strong> (<em>List</em>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.execute_evts">
-<span class="sig-name descname"><span class="pre">execute_evts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.execute_evts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute_evts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.execute_evts" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>evts</strong> (<em>List</em>) – </p></li>
-<li><p><strong>queue</strong> (<em>List</em>) – </p></li>
+<li><p><strong>evts</strong> (<em>List</em>)</p></li>
+<li><p><strong>queue</strong> (<em>List</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -351,24 +386,24 @@ execute before those with a higher value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.reset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.size">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.size" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.size" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduleGroup.sort">
-<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.sort" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduleGroup.sort" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduledEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">ScheduledEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">ScheduledEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A callable base class for all scheduled events. Calling
 instances of this class will execute the Callable evt.</p>
@@ -383,18 +418,20 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduledEvent.reschedule">
-<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent.reschedule" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reschedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent.reschedule" title="Link to this definition">¶</a></dt>
 <dd><p>Implemented by subclasses.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.ScheduledEvent.void">
-<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent.void" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">void</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.ScheduledEvent.void" title="Link to this definition">¶</a></dt>
 <dd><p>Voids this ScheduledEvent so that it will not execute</p>
 </dd></dl>
 
@@ -402,7 +439,7 @@ execute before those with a higher value.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">SharedScheduleRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">SharedScheduleRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Encapsulates a dynamic schedule of executable events shared and
 synchronized across processes.</p>
@@ -422,19 +459,23 @@ only the events schedule for that time. In this way, no schedule runs ahead of a
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.execute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.execute" title="Link to this definition">¶</a></dt>
 <dd><p>Executes this SharedSchedule by repeatedly popping the next scheduled events off the queue and
 executing them.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.schedule_end_event">
-<span class="sig-name descname"><span class="pre">schedule_end_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_end_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_end_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_end_event" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the specified event (a Callable) for execution when the schedule terminates and the
 simulation ends.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when simulation ends.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evt</strong> (<em>Callable</em>) – the Callable to execute when simulation ends.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The ScheduledEvent instance that was scheduled to execute at the end.</p>
@@ -447,7 +488,7 @@ simulation ends.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.schedule_event">
-<span class="sig-name descname"><span class="pre">schedule_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_event" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the specified event to execute at the specified tick with
 the specified priority. By default, events are scheduled with a random priority type.</p>
 <p>An event’s priority_type and priority determines when it will execute
@@ -492,6 +533,8 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -505,7 +548,7 @@ execute before those with a higher value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.schedule_repeating_event">
-<span class="sig-name descname"><span class="pre">schedule_repeating_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_repeating_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_repeating_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PriorityType.RANDOM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_repeating_event" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the specified event to execute at the specified tick with the specified
 priority, and to repeat at the specified interval. By default, events are scheduled with
 a random priority type.</p>
@@ -552,6 +595,8 @@ the type of priority used to order events that occur at the same tick.</p></li>
 value is used to order all the events assigned a BY_PRIORITY priority type.
 Otherwise, this value is ignored. Lower values have a higher priority and will
 execute before those with a higher value.</p></li>
+<li><p><strong>metadata</strong> (<em>Dict</em>) – arbitrary data that can be associated with the event, useful to recreate the
+event from a checkpoint.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -565,7 +610,7 @@ execute before those with a higher value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.schedule_stop">
-<span class="sig-name descname"><span class="pre">schedule_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_stop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">schedule_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.schedule_stop" title="Link to this definition">¶</a></dt>
 <dd><p>Schedules the execution of this schedule to stop at the specified tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -582,14 +627,14 @@ execute before those with a higher value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.stop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.stop" title="Link to this definition">¶</a></dt>
 <dd><p>Stops schedule execution. All events scheduled for the current tick will execute and
 then schedule execution will stop.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="repast4py.schedule.SharedScheduleRunner.tick">
-<span class="sig-name descname"><span class="pre">tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.tick" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.SharedScheduleRunner.tick" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the current tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -605,7 +650,7 @@ then schedule execution will stop.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="repast4py.schedule.create_arg_evt">
-<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">create_arg_evt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.create_arg_evt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">create_arg_evt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.create_arg_evt" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a new Callable that will call the specified Callable, passing
 it the specified arguments when it is executed as part of a schedule.
 The returned Callable can be scheduled using the SharedScheduleRunner’s schedule_* methods.</p>
@@ -628,7 +673,7 @@ The returned Callable can be scheduled using the SharedScheduleRunner’s schedu
 
 <dl class="py function">
 <dt class="sig sig-object py" id="repast4py.schedule.init_schedule_runner">
-<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">init_schedule_runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.init_schedule_runner" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">init_schedule_runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.init_schedule_runner" title="Link to this definition">¶</a></dt>
 <dd><p>Initializes the default schedule runner, a dynamic schedule of executable events shared and
 synchronized across processes.</p>
 <p>Events are added to the scheduled for execution at a particular <em>tick</em>.
@@ -656,7 +701,7 @@ schedule events.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="repast4py.schedule.runner">
-<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">runner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.runner" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">repast4py.schedule.</span></span><span class="sig-name descname"><span class="pre">runner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.schedule.runner" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the default schedule runner, a dynamic schedule of executable events shared and
 synchronized across processes.</p>
 <dl class="field-list simple">
@@ -677,12 +722,20 @@ schedule events.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">repast4py.schedule module</a><ul>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType"><code class="docutils literal notranslate"><span class="pre">EvtType</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType.END"><code class="docutils literal notranslate"><span class="pre">EvtType.END</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType.ONE_TIME"><code class="docutils literal notranslate"><span class="pre">EvtType.ONE_TIME</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType.REPEATING"><code class="docutils literal notranslate"><span class="pre">EvtType.REPEATING</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType.STOP"><code class="docutils literal notranslate"><span class="pre">EvtType.STOP</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.schedule.EvtType.VOID"><code class="docutils literal notranslate"><span class="pre">EvtType.VOID</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#repast4py.schedule.OneTimeEvent"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent</span></code></a><ul>
 <li><a class="reference internal" href="#repast4py.schedule.OneTimeEvent.reschedule"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent.reschedule()</span></code></a></li>
 <li><a class="reference internal" href="#repast4py.schedule.OneTimeEvent.void"><code class="docutils literal notranslate"><span class="pre">OneTimeEvent.void()</span></code></a></li>
@@ -756,7 +809,7 @@ schedule events.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -764,13 +817,13 @@ schedule events.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -792,8 +845,8 @@ schedule events.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, UChicago Argonne, LLC.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2023, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
   </body>
 </html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>repast4py.checkpoint module &#8212; repast4py  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=ad52900a" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="repast4py.geometry module" href="repast4py.geometry.html" />
+    <link rel="prev" title="repast4py.core module" href="repast4py.core.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.geometry.html" title="repast4py.geometry module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.core.html" title="repast4py.core module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" accesskey="U">repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.checkpoint module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-repast4py.checkpoint">
+<span id="repast4py-checkpoint-module"></span><h1>repast4py.checkpoint module<a class="headerlink" href="#module-repast4py.checkpoint" title="Link to this heading">¶</a></h1>
+<p>This module includes classes and functions for checkpointing a repast4py simulation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">repast4py.checkpoint.</span></span><span class="sig-name descname"><span class="pre">Checkpoint</span></span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Creates a Checkpoint instance that can be used to save the simulation.</p>
+<p>The expectation is that the user can save a Checkpoint instance using the dill
+module to pickle it. Consequently, all the state to save passed to a Checkpoint instance
+must be pickleable using dill. If that is not the case, then translate the state
+into something pickleable (e.g., a string or some bespoke representation).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore">
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restorer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore" title="Link to this definition">¶</a></dt>
+<dd><p>Restores a value identified by the specified key using the
+specified Callable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the identifying key of the saved value to restore.</p></li>
+<li><p><strong>restorer</strong> (<em>Callable</em>) – a Callable that takes the saved value associated
+with the key, and returns the restored value.</p></li>
+<li><p><strong>args</strong> – additional optional arguments that are passed to the restorer
+in addition to the saved value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The restored value associated with the key.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Saving and restoring some arbitrary state from a <cite>Model</cite> object
+named <cite>model</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ckp</span> <span class="o">=</span> <span class="n">Checkpoint</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">c</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ckp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;mprops&#39;</span><span class="p">,</span> <span class="n">model_props</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">restore_props</span><span class="p">(</span><span class="n">prop_data</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="go">        model.a = prop_data[0]</span>
+<span class="go">        model.b = prop_data[1]</span>
+<span class="go">        model.c = prop_data[2]</span>
+<span class="go">        return model</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ckp</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;mprops&#39;</span><span class="p">,</span> <span class="n">restore_props</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore_agents">
+<span class="sig-name descname"><span class="pre">restore_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restore_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore_agents" title="Link to this definition">¶</a></dt>
+<dd><p>Restores saved agents one by one, returning a generator
+over the restored agents.</p>
+<p>Each saved agent state (see <a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_agents" title="repast4py.checkpoint.Checkpoint.save_agents"><code class="xref py py-attr docutils literal notranslate"><span class="pre">save_agents</span></code></a>) is passed
+to the <cite>restore_agent</cite> Callable and the result of that call
+is returned, until there are no more agents to restore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>restore_agent</strong> (<em>Callable</em>) – a Callable that takes agent state and returns
+an Agent.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Restore an agent implemented in a <cite>MyAgent</cite> class with two attributes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">restore_my_agent</span><span class="p">(</span><span class="n">agent_state</span><span class="p">):</span>
+<span class="go">        a = agent_state[0]</span>
+<span class="go">        b = agent_state[1]</span>
+<span class="go">        return MyAgent(a, b)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">ckp</span><span class="o">.</span><span class="n">restore_agents</span><span class="p">(</span><span class="n">restore_my_agent</span><span class="p">):</span>
+<span class="go">        # do something with agent</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore_network">
+<span class="sig-name descname"><span class="pre">restore_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore_network" title="Link to this definition">¶</a></dt>
+<dd><p>Restores any saved networks from this Checkpoint instance. The networks are added to the context,
+and all the requisite cross-process edges will be created. Note that the context is expected
+to curently contain restored agents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> (<a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext" title="repast4py.context.SharedContext"><em>SharedContext</em></a>) – the model’s context.</p></li>
+<li><p><strong>comm</strong> – the current communicator. This will be used to create ghosts and cross process links
+where necessary.</p></li>
+<li><p><strong>create_agent</strong> (<em>Callable</em>) – Callable that can take the Tuple result of an agent <code class="samp docutils literal notranslate"><span class="pre">save()</span></code> and
+return an agent.</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork" title="repast4py.network.SharedNetwork"><em>SharedNetwork</em></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError if expected agents are not found in the context.</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore_random">
+<span class="sig-name descname"><span class="pre">restore_random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore_random" title="Link to this definition">¶</a></dt>
+<dd><p>Restores the checkpointed random state, setting
+<a class="reference internal" href="repast4py.random.html#repast4py.random.seed" title="repast4py.random.seed"><code class="xref py py-mod docutils literal notranslate"><span class="pre">repast4py.random.seed</span></code></a> and <a class="reference internal" href="repast4py.random.html#repast4py.random.default_rng" title="repast4py.random.default_rng"><code class="xref py py-mod docutils literal notranslate"><span class="pre">repast4py.random.default_rng</span></code></a> to the
+saved state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore_schedule">
+<span class="sig-name descname"><span class="pre">restore_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt_creator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evt_processor=&lt;function</span> <span class="pre">Checkpoint.&lt;lambda&gt;&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag='__default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialize=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restore_stop_at=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Restores the state of the schedule, and by default initializes
+the schedule runner.</p>
+<p>The saved metadata dictionaries for each currently scheduled
+event (see <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_event" title="repast4py.schedule.SharedScheduleRunner.schedule_event"><code class="xref py py-mod docutils literal notranslate"><span class="pre">schedule_event</span></code></a> and
+<a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.SharedScheduleRunner.schedule_repeating_event" title="repast4py.schedule.SharedScheduleRunner.schedule_repeating_event"><code class="xref py py-mod docutils literal notranslate"><span class="pre">schedule_repeating_event</span></code></a>)
+are passed to the <cite>evt_creator</cite> argument which is expected to return a Callable
+that can then be scheduled appropriately. If the <cite>evt_creator</cite> returns <a class="reference internal" href="#repast4py.checkpoint.IGNORE_EVT" title="repast4py.checkpoint.IGNORE_EVT"><code class="xref py py-mod docutils literal notranslate"><span class="pre">IGNORE_EVT</span></code></a>,
+then the event will not be scheduled as part of restoring the schedule. If an <cite>evt_processor</cite>
+is specified, then each metadata dictonary and the <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a>
+created when restoring and scheduling saved events is passed to that. This can be useful,
+if, for example, a model needs to cache <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a> in order
+to <cite>void</cite> them before they are executed. Here an <cite>evt_processor</cite> can add these
+<a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a> to the model’s cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evt_creator</strong> (<em>Callable</em>) – a Callable (function, method, etc.) that takes the metadata
+dictionary associated with an event as an argument and returns
+the Callable to schedule.</p></li>
+<li><p><strong>evt_processor</strong> (<em>Callable</em>) – a Callable that that takes the metadata
+dictionary associated with an event and the <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.ScheduledEvent" title="repast4py.schedule.ScheduledEvent"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ScheduledEvent</span></code></a>
+created by the <cite>evt_creator</cite> as arguments.</p></li>
+<li><p><strong>comm</strong> (<em>Intracomm</em>) – the communicator in which this is running</p></li>
+<li><p><strong>tag</strong> – only saved scheduled events whose metadata dictionary ‘tag’
+entry matches this tag will be restored.</p></li>
+<li><p><strong>initialize</strong> (<em>bool</em>) – if true, then the schedule runner is initialized with
+schedule.init_schedule_runner, otherwise the schedule runner
+is not initialized. When restoring, this needs to be True in
+one call to restore_schedule.</p></li>
+<li><p><strong>restore_stop_at</strong> (<em>bool</em>) – if true, then any stop actions will be restored, otherwise
+it is the user’s responsibility to schedule a stop after restoring the
+schedule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.runner" title="repast4py.schedule.runner"><code class="xref py py-mod docutils literal notranslate"><span class="pre">repast4py.schedule.runner</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.restore_space">
+<span class="sig-name descname"><span class="pre">restore_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.restore_space" title="Link to this definition">¶</a></dt>
+<dd><p>Places all the agents in the specified context into the specified space at the location
+saved for that agent. The saved locations for the specified space are looked up using
+the space’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> (<a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext" title="repast4py.context.SharedContext"><em>SharedContext</em></a>) – the model’s context containing the agents we want to place into the specified
+space as the saved locations.</p></li>
+<li><p><strong>space</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid" title="repast4py.space.SharedGrid"><em>SharedGrid</em></a><em> | </em><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace" title="repast4py.space.SharedCSpace"><em>SharedCSpace</em></a>) – the space to restore the agents into.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save" title="Link to this definition">¶</a></dt>
+<dd><p>Saves arbitrary key value pairs into this Checkpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – an identifying key for the saved value.</p></li>
+<li><p><strong>value</strong> – the value to save.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save_agents">
+<span class="sig-name descname"><span class="pre">save_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save_agents" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the specified agents’ state to this Checkpoint.</p>
+<p>This iterates over each agent and stores the result of each agents’
+<cite>save()</cite> method. The tuple returned by <cite>save()</cite> must be pickleable
+using the <cite>dill</cite> module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>agents</strong> (<em>Iterable</em><em>[</em><a class="reference internal" href="repast4py.core.html#repast4py.core.Agent" title="_core.Agent"><em>Agent</em></a><em>]</em>) – the Iterable of Agents to save.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save_network">
+<span class="sig-name descname"><span class="pre">save_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save_network" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the specified network to this Checkpoint instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>network</strong> (<a class="reference internal" href="repast4py.network.html#repast4py.network.SharedNetwork" title="repast4py.network.SharedNetwork"><em>SharedNetwork</em></a>) – the network to save.</p></li>
+<li><p><strong>rank</strong> (<em>int</em>) – the rank of the executing process.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save_random">
+<span class="sig-name descname"><span class="pre">save_random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save_random" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the current random state of the <a class="reference internal" href="repast4py.random.html#repast4py.random.default_rng" title="repast4py.random.default_rng"><code class="xref py py-mod docutils literal notranslate"><span class="pre">repast4py.random.default_rng</span></code></a>
+generator and the py:mod:<cite>repast4py.random.seed</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save_schedule">
+<span class="sig-name descname"><span class="pre">save_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the currently scheduled events to this Checkpoint.</p>
+<p>The state of the <a class="reference internal" href="repast4py.schedule.html#repast4py.schedule.runner" title="repast4py.schedule.runner"><code class="xref py py-mod docutils literal notranslate"><span class="pre">repast4py.schedule.runner</span></code></a> is saved together
+with the currently scheduled events (Python Callables), and their metadata.
+The intention is that user provides enough metadata to reconstruct the scheduled
+Callable. For example, if the Callable is a Python class that updates
+some attribute on some agents, then the metadata would record the agent
+ids of those agents, and the name of the class. That data can then be
+used to re-create the class when the scheduled is restored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="repast4py.checkpoint.Checkpoint.save_space">
+<span class="sig-name descname"><span class="pre">save_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#repast4py.checkpoint.Checkpoint.save_space" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the specified space into this Checkpointing by saving the space location of
+all the agents in the context. The saved locations are identified by the space’s
+name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> (<a class="reference internal" href="repast4py.context.html#repast4py.context.SharedContext" title="repast4py.context.SharedContext"><em>SharedContext</em></a>) – the model’s context containing the agents whose locations we want to save.</p></li>
+<li><p><strong>space</strong> (<a class="reference internal" href="repast4py.space.html#repast4py.space.SharedGrid" title="repast4py.space.SharedGrid"><em>SharedGrid</em></a><em> | </em><a class="reference internal" href="repast4py.space.html#repast4py.space.SharedCSpace" title="repast4py.space.SharedCSpace"><em>SharedCSpace</em></a>) – the space to save.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="repast4py.checkpoint.DEFAULT_TAG">
+<span class="sig-prename descclassname"><span class="pre">repast4py.checkpoint.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_TAG</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'__default'</span></em><a class="headerlink" href="#repast4py.checkpoint.DEFAULT_TAG" title="Link to this definition">¶</a></dt>
+<dd><p>The default tag in saved event metadata dictionaries</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="repast4py.checkpoint.IGNORE_EVT">
+<span class="sig-prename descclassname"><span class="pre">repast4py.checkpoint.</span></span><span class="sig-name descname"><span class="pre">IGNORE_EVT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#repast4py.checkpoint.IGNORE_EVT" title="Link to this definition">¶</a></dt>
+<dd><p>Return value indicating that a saved evt should be ignored
+when restoring the schedule.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">repast4py.checkpoint module</a><ul>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint"><code class="docutils literal notranslate"><span class="pre">Checkpoint</span></code></a><ul>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore_agents"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore_agents()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore_network"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore_network()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore_random"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore_random()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore_schedule"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.restore_space"><code class="docutils literal notranslate"><span class="pre">Checkpoint.restore_space()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_agents"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save_agents()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_network"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save_network()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_random"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save_random()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_schedule"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save_schedule()</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.Checkpoint.save_space"><code class="docutils literal notranslate"><span class="pre">Checkpoint.save_space()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repast4py.checkpoint.DEFAULT_TAG"><code class="docutils literal notranslate"><span class="pre">DEFAULT_TAG</span></code></a></li>
+<li><a class="reference internal" href="#repast4py.checkpoint.IGNORE_EVT"><code class="docutils literal notranslate"><span class="pre">IGNORE_EVT</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="repast4py.core.html"
+                          title="previous chapter">repast4py.core module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="repast4py.geometry.html"
+                          title="next chapter">repast4py.geometry module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/repast4py.checkpoint.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="repast4py.geometry.html" title="repast4py.geometry module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="repast4py.core.html" title="repast4py.core module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">repast4py  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >repast4py</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="repast4py.html" >repast4py package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">repast4py.checkpoint module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, UChicago Argonne, LLC.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>
