@@ -646,8 +646,8 @@ Python 3.8, <code>sudo apt install python3.8-dev</code> will work for Ubuntu.
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="bash"><span></span>$<span class="tok-w"> </span>python3<span class="tok-w"> </span>-m<span class="tok-w"> </span>venv<span class="tok-w"> </span>path/to/repast4py_venv
-$<span class="tok-w"> </span><span class="tok-nb">source</span><span class="tok-w"> </span>path/to/globus_compute_venv/bin/activate
-<span class="tok-o">(</span>repast4py_env<span class="tok-o">)</span><span class="tok-w"> </span>$<span class="tok-w"> </span>python3<span class="tok-w"> </span>-m<span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>repast4py</code></pre>
+$<span class="tok-w"> </span><span class="tok-nb">source</span><span class="tok-w"> </span>path/to/repast4py_venv/bin/activate
+<span class="tok-o">(</span>repast4py_venv<span class="tok-o">)</span><span class="tok-w"> </span>$<span class="tok-w"> </span>env<span class="tok-w"> </span><span class="tok-nv">CC</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span><span class="tok-nv">CXX</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>repast4py</code></pre>
 </div>
 </div>
 <div class="paragraph">
