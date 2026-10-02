@@ -526,6 +526,22 @@ install the macOS Xcode command line tools, if necessary, by running the followi
 <div class="paragraph">
 <p>This will start a dialog for the tools installation.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you only need to run smaller scale models on a single process, you can skip
+installing MPI entirely. Repast4Py offers a single-rank installation that requires
+neither MPI nor mpi4py, built with <code>env R4PY_NO_MPI=1 pip install repast4py</code>. See
+the <a href="https://repast.github.io/repast4py.site/guide/user_guide.html#single_rank_install">User&#8217;s Guide</a>
+for details.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_homebrew">Homebrew</h3>
 <div class="paragraph">
@@ -591,7 +607,7 @@ The version information might differ.
 </td>
 <td class="content">
 The compilation will take a few minutes or more, depending on your
-machine.
+machine, and the versions may differ.
 </td>
 </tr>
 </table>
@@ -616,6 +632,18 @@ terminal window.</p>
 <p>If the wrappers are not found, you will see an error like <code>zsh: command not found: mpicc</code>, and you will need to add the wrapper location to the <code>PATH</code> environment variable. If you installed via Homebrew, this will be <code>/opt/homebrew/bin</code>. If you installed from source, this will be the install directory specified
 in the <code>prefix</code> argument plus <code>/bin</code> (e.g., <code>$HOME/sfw/mpich-4.0.3/bin</code>).</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Again, the version numbers may differ from those seen below.
+</td>
+</tr>
+</table>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="zsh"><span></span><span class="tok-c1"># Replace X with `opt/homebrew` for Hombrew or wherever you installed mpich</span>
@@ -637,8 +665,8 @@ InstalledDir:<span class="tok-w"> </span>/Library/Developer/CommandLineTools/usr
 Collecting<span class="tok-w"> </span>mpi4py
 ...
 %<span class="tok-w"> </span>python3
-Python<span class="tok-w"> </span><span class="tok-m">3</span>.9.6<span class="tok-w"> </span><span class="tok-o">(</span>default,<span class="tok-w"> </span>Aug<span class="tok-w">  </span><span class="tok-m">5</span><span class="tok-w"> </span><span class="tok-m">2022</span>,<span class="tok-w"> </span><span class="tok-m">15</span>:21:02<span class="tok-o">)</span>
-<span class="tok-o">[</span>Clang<span class="tok-w"> </span><span class="tok-m">14</span>.0.0<span class="tok-w"> </span><span class="tok-o">(</span>clang-1400.0.29.102<span class="tok-o">)]</span><span class="tok-w"> </span>on<span class="tok-w"> </span>darwin
+Python<span class="tok-w"> </span><span class="tok-m">3</span>.13.7<span class="tok-w"> </span><span class="tok-o">(</span>main,<span class="tok-w"> </span>Aug<span class="tok-w"> </span><span class="tok-m">14</span><span class="tok-w"> </span><span class="tok-m">2025</span>,<span class="tok-w"> </span><span class="tok-m">11</span>:12:11<span class="tok-o">)</span>
+<span class="tok-o">[</span>Clang<span class="tok-w"> </span><span class="tok-m">17</span>.0.0<span class="tok-w"> </span><span class="tok-o">(</span>clang-1700.0.13.3<span class="tok-o">)]</span><span class="tok-w"> </span>on<span class="tok-w"> </span>darwin
 Type<span class="tok-w"> </span><span class="tok-s2">&quot;help&quot;</span>,<span class="tok-w"> </span><span class="tok-s2">&quot;copyright&quot;</span>,<span class="tok-w"> </span><span class="tok-s2">&quot;credits&quot;</span><span class="tok-w"> </span>or<span class="tok-w"> </span><span class="tok-s2">&quot;license&quot;</span><span class="tok-w"> </span><span class="tok-k">for</span><span class="tok-w"> </span>more<span class="tok-w"> </span>information.
 &gt;&gt;&gt;<span class="tok-w"> </span>from<span class="tok-w"> </span>mpi4py<span class="tok-w"> </span>import<span class="tok-w"> </span>MPI</code></pre>
 </div>
@@ -653,8 +681,8 @@ test it with an import.</p>
 Collecting<span class="tok-w"> </span>repast4py
 ...
 %<span class="tok-w"> </span>python3
-Python<span class="tok-w"> </span><span class="tok-m">3</span>.9.6<span class="tok-w"> </span><span class="tok-o">(</span>default,<span class="tok-w"> </span>Aug<span class="tok-w">  </span><span class="tok-m">5</span><span class="tok-w"> </span><span class="tok-m">2022</span>,<span class="tok-w"> </span><span class="tok-m">15</span>:21:02<span class="tok-o">)</span>
-<span class="tok-o">[</span>Clang<span class="tok-w"> </span><span class="tok-m">14</span>.0.0<span class="tok-w"> </span><span class="tok-o">(</span>clang-1400.0.29.102<span class="tok-o">)]</span><span class="tok-w"> </span>on<span class="tok-w"> </span>darwin
+Python<span class="tok-w"> </span><span class="tok-m">3</span>.13.7<span class="tok-w"> </span><span class="tok-o">(</span>main,<span class="tok-w"> </span>Aug<span class="tok-w"> </span><span class="tok-m">14</span><span class="tok-w"> </span><span class="tok-m">2025</span>,<span class="tok-w"> </span><span class="tok-m">11</span>:12:11<span class="tok-o">)</span>
+<span class="tok-o">[</span>Clang<span class="tok-w"> </span><span class="tok-m">17</span>.0.0<span class="tok-w"> </span><span class="tok-o">(</span>clang-1700.0.13.3<span class="tok-o">)]</span><span class="tok-w"> </span>on<span class="tok-w"> </span>darwin
 Type<span class="tok-w"> </span><span class="tok-s2">&quot;help&quot;</span>,<span class="tok-w"> </span><span class="tok-s2">&quot;copyright&quot;</span>,<span class="tok-w"> </span><span class="tok-s2">&quot;credits&quot;</span><span class="tok-w"> </span>or<span class="tok-w"> </span><span class="tok-s2">&quot;license&quot;</span><span class="tok-w"> </span><span class="tok-k">for</span><span class="tok-w"> </span>more<span class="tok-w"> </span>information.
 &gt;&gt;&gt;<span class="tok-w"> </span>from<span class="tok-w"> </span>repast4py<span class="tok-w"> </span>import<span class="tok-w"> </span>space</code></pre>
 </div>
@@ -678,7 +706,7 @@ the repast4py install.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-10 16:53:22 -0500
+Last updated 2026-09-28 10:33:52 -0400
 </div>
 </div>
 </body>

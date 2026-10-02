@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Version 3.0 November 2025">
+<meta name="author" content="Version 4.0 September 2026">
 <title>Repast for Python (Repast4Py) User Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -511,7 +511,7 @@ pre.pygments .tok-il { color: #666 } /* Literal.Number.Integer.Long */
 <div id="header">
 <h1>Repast for Python (Repast4Py) User Guide</h1>
 <div class="details">
-<span id="author" class="author">Version 3.0 November 2025</span><br>
+<span id="author" class="author">Version 4.0 September 2026</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -589,16 +589,46 @@ to create a scalable modeling system that can exploit the largest HPC resources 
 <div class="sect2">
 <h3 id="_requirements">1.1. Requirements</h3>
 <div class="paragraph">
-<p>Repast4Py can run on Linux, macOS and Windows provided there is a working MPI implementation
-installed and mpi4py is supported. Repast4Py is developed and tested on Linux. We recommend
-that Windows users use the Windows Subsystem for Linux (WSL). Installation instructions for
+<p>The default multiprocess distributed version of Repast4Py can run on Linux, macOS and Windows
+provided there is a working MPI implementation installed and mpi4py is supported. On Windows,
+we recommend using the Windows Subsystem for Linux (WSL) and following the Linux install
+instructions. Installation instructions for
 WSL can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/install">here</a>.</p>
 </div>
 <div class="paragraph">
+<p>A native Windows install that does not require MPI or
+a C/C++ compiler is also available. Installation instructions are
+<a href="https://repast.github.io/repast4py.site/windows_install.html">here</a>.
+This mode can be used to develop models that are amenable to Python&#8217;s built-in multiprocessing
+or thread-based parallelism, enabling forms of parallelism other than distributed MPI.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A non-mpi install is also available for Linux and Mac, but a C/C++
+compiler is currently still required. See <a href="#single_rank_install">Section 1.2.1, &#8220;No MPI Installation&#8221;</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Repast4Py also requires PyTorch. On Linux, the default PyTorch wheel on PyPI
+bundles NVIDIA CUDA libraries; if you have no NVIDIA GPU, see
+<a href="#cpu_torch_install">Section 1.2.2, &#8220;CPU-only PyTorch&#8221;</a> for installing the smaller CPU-only build
+<strong>before</strong> installing Repast4Py.</p>
+</div>
+<div class="sect3">
+<h4 id="_mpi_installation">1.1.1. MPI Installation</h4>
+<div class="paragraph">
 <p>Under Linux, MPI can be installed using your OS&#8217;s package manager. For example,
-under Ubuntu 22.04 (and thus WSL), the mpich MPI implementation can be installed with:</p>
+under Ubuntu 24.04 (and thus WSL), the mpich MPI implementation can be installed with:</p>
 </div>
 <div class="listingblock">
+<div class="title">Linux and WSL</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="bash"><span></span>$<span class="tok-w"> </span>sudo<span class="tok-w"> </span>apt<span class="tok-w"> </span>install<span class="tok-w"> </span>mpich</code></pre>
 </div>
@@ -611,6 +641,7 @@ under Ubuntu 22.04 (and thus WSL), the mpich MPI implementation can be installed
 Check the resource&#8217;s documentation on available software for more details.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="_installation">1.2. Installation</h3>
 <div class="paragraph">
@@ -621,8 +652,9 @@ to the <code>mpicxx</code> (or <code>mpic++</code>) compiler wrapper provided by
 Depending on the operating system, the <code>CXX</code> variable may also need to be set.</p>
 </div>
 <div class="listingblock">
+<div class="title">Linux, macOS, and WSL</div>
 <div class="content">
-<pre>env CC=mpicxx CXX=mpicxx pip install repast4py</pre>
+<pre class="pygments highlight"><code data-lang="bash"><span></span>env<span class="tok-w"> </span><span class="tok-nv">CC</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span><span class="tok-nv">CXX</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>repast4py</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -635,7 +667,7 @@ Depending on the operating system, the <code>CXX</code> variable may also need t
 If you see an error message about a missing <code>python.h</code> header file when
 installing Repast4Py under Ubuntu (or other Linuxes), you will need to install
 a python dev package using your OS&#8217;s package manager. For example, assuming
-Python 3.8, <code>sudo apt install python3.8-dev</code> will work for Ubuntu.
+Python 3.12, <code>sudo apt install python3.12-dev</code> will work for Ubuntu.
 </td>
 </tr>
 </table>
@@ -644,6 +676,7 @@ Python 3.8, <code>sudo apt install python3.8-dev</code> will work for Ubuntu.
 <p>The preferred install is into a Python virtual environment.</p>
 </div>
 <div class="listingblock">
+<div class="title">Linux, macOS, and WSL</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="bash"><span></span>$<span class="tok-w"> </span>python3<span class="tok-w"> </span>-m<span class="tok-w"> </span>venv<span class="tok-w"> </span>path/to/repast4py_venv
 $<span class="tok-w"> </span><span class="tok-nb">source</span><span class="tok-w"> </span>path/to/repast4py_venv/bin/activate
@@ -652,7 +685,9 @@ $<span class="tok-w"> </span><span class="tok-nb">source</span><span class="tok-
 </div>
 <div class="paragraph">
 <p>The environment only needs to be created once with <code>python3 -m venv &#8230;&#8203;</code>,
-but does need to be sourced in order to be used.</p>
+but does need to be sourced in order to be used. For more
+more information see the <code>venv</code> Python documenation
+<a href="https://docs.python.org/3/library/venv.html">here</a></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -668,6 +703,96 @@ Python virtual environment is recommended.
 </td>
 </tr>
 </table>
+</div>
+<div class="sect3">
+<h4 id="single_rank_install">1.2.1. No MPI Installation</h4>
+<div class="paragraph">
+<p>Repast4Py can also be installed in a <strong>no-mpi</strong> mode that requires neither a
+native MPI installation nor mpi4py.</p>
+</div>
+<div class="paragraph">
+<p>A C++ compiler and the Python development headers are still required to compile
+Repast4Py&#8217;s native extensions, but no MPI compiler wrapper is needed. Set the
+<code>R4PY_NO_MPI</code> environment variable when installing:</p>
+</div>
+<div class="listingblock">
+<div class="title">Linux, macOS, and WSL</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>env<span class="tok-w"> </span><span class="tok-nv">R4PY_NO_MPI</span><span class="tok-o">=</span><span class="tok-m">1</span><span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>repast4py</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A no-mpi installation can only be run as a single process. Launching it
+across multiple processes (e.g. <code>mpirun -n 2</code>) is an error and the program will exit;
+for distributed multi-rank runs use the default installation above with a working
+MPI.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Do not install the no-mpi version and the mpi version of Repast4Py in the same Python environment.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cpu_torch_install">1.2.2. CPU-only PyTorch</h4>
+<div class="paragraph">
+<p>Repast4Py uses PyTorch in its value layer raster implementation,
+and the default Linux PyTorch wheels on PyPI with GPU support can be very large
+(e.g. several gigabytes). For models that do not use value layers or for
+non-GPU Linux environments, the CPU-only build can be used.</p>
+</div>
+<div class="paragraph">
+<p>This is only relevant on Linux. The macOS and Windows wheels on PyPI are CPU-only already.
+A cluster or HPC resource may also provide PyTorch itself, so check the resource&#8217;s
+documentation before installing your own. Install the
+CPU-only build from PyTorch&#8217;s own package index <em>before</em> installing Repast4Py:</p>
+</div>
+<div class="listingblock">
+<div class="title">Linux and WSL</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>$<span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>torch<span class="tok-w"> </span>--index-url<span class="tok-w"> </span>https://download.pytorch.org/whl/cpu
+$<span class="tok-w"> </span>env<span class="tok-w"> </span><span class="tok-nv">CC</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span><span class="tok-nv">CXX</span><span class="tok-o">=</span>mpicxx<span class="tok-w"> </span>pip<span class="tok-w"> </span>install<span class="tok-w"> </span>repast4py</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same two steps work for a no-mpi installation,
+substituting <code>env R4PY_NO_MPI=1 pip install repast4py</code> for the
+second command.</p>
+</div>
+<div class="paragraph">
+<p>The CPU-only wheels carry a <code>+cpu</code> version suffix that pip prefers over the plain
+version.</p>
+</div>
+<div class="paragraph">
+<p>To check which build is installed:</p>
+</div>
+<div class="listingblock">
+<div class="title">Linux and WSL</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>$<span class="tok-w"> </span>python<span class="tok-w"> </span>-c<span class="tok-w"> </span><span class="tok-s2">&quot;import torch; print(torch.__version__)&quot;</span>
+<span class="tok-m">2</span>.14.0+cpu</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>+cpu</code> suffix is the CPU-only build. A plain version number, or a <code>+cu&#8230;&#8203;</code> suffix,
+is a CUDA build.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -6243,7 +6368,7 @@ after restoring from a checkpoint and before running the schedule.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-11 15:14:29 -0500
+Last updated 2026-09-28 10:33:52 -0400
 </div>
 </div>
 </body>
